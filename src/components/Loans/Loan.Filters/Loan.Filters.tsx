@@ -1,13 +1,10 @@
-import clsx from "clsx";
+import { DropdownOrderBy } from "@/components/DropdownOrderBy/DropdownOrderBy";
+import { useCasesOptions } from "../../../hooks/useCasesOptions";
+import { GAME_TYPE, SORT_BY } from "../../../types/caseTypes";
 import { Dropdown } from "../../Dropdown/Dropdown";
 import { TextField } from "../../Form/TextField/TextField";
 import { SearchIcon } from "../../icons/SearchIcon";
 import styles from "./Loan.Filters.module.scss";
-import { GAME_TYPE, SORT_BY } from "../../../types/caseTypes";
-import { useCasesOptions } from "../../../hooks/useCasesOptions";
-import { DropdownPriceRange } from "@/components/DropdownPriceRange/DropdownPriceRange";
-import { MinMaxPriceField } from "@/components/Form/MinMaxPriceField/MinMaxPriceField";
-import { DropdownOrderBy } from "@/components/DropdownOrderBy/DropdownOrderBy";
 
 type TProps = {
   className?: string;
@@ -32,8 +29,6 @@ export const LoanFilters = ({
   onSortChange,
   search,
   onSearchChange,
-  priceFilter,
-  onPriceFilterChange,
 }: TProps) => {
   const { gameTypeOptions } = useCasesOptions();
   const filteredGameTypeOptions = gameTypeOptions.filter(

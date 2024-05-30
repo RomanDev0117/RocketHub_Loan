@@ -1,24 +1,16 @@
 import { LoanItems } from "@/components/Loans/Loan.Items/Loan.Items";
 import { LoanOfferItems } from "@/components/Loans/LoanOffer.Items/LoanOffer.Items";
-import { getAppState } from "@/store";
+import useTranslation from "@/hooks/useTranslation";
+import { selectLoanItems } from "@/store/slices/loan.slice";
 import clsx from "clsx";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import {
-  selectIsLoggedIn,
-  selectUserName,
-} from "../../../store/slices/userSlice";
-import styles from "./HomePage.module.scss";
-import { selectLoanItems } from "@/store/slices/loan.slice";
 import toast from "react-hot-toast";
-import useTranslation from "@/hooks/useTranslation";
+import { useSelector } from "react-redux";
+import styles from "./HomePage.module.scss";
 
 export const HomePage = () => {
-  const userName = useSelector(selectUserName);
   const { t } = useTranslation();
 
-  const state = getAppState();
-  const isLoggedIn = selectIsLoggedIn(state);
   const [tradeLink, setTradeLink] = useState(
     "https://bitskick.com/tradeoffer/new?partner=35RTFH6vwfew££"
   );

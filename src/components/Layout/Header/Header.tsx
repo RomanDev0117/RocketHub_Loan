@@ -1,33 +1,17 @@
 import { AccountUnlockPopup } from "@/screens/modals/AccountUnlockPopup/AccountUnlockPopup";
-import clsx from "clsx";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { STEAM_AUTH_URL } from "../../../constants";
 import { useLoginPopup } from "../../../hooks/useLoginPopup";
-import { useIsMobileHeader } from "../../../hooks/useMediaHooks";
-import { T } from "../../../i18n/translate";
-import {
-  closeNotifications,
-  collapseSidebar,
-  openChat,
-  toggleSidebarOpen,
-} from "../../../store/actions/appActions";
 import { selectIsLoggedIn } from "../../../store/slices/userSlice";
 import { ROUTE } from "../../../types/routeTypes";
-import { Button } from "../../Button/Button";
 import { Logo } from "../../Logo/Logo";
-import { ChatIconV2 } from "../../icons/ChatIconV2";
-import { MenuIcon } from "../../icons/MenuIcon";
 import styles from "./Header.module.scss";
-import { HeaderWallet } from "./HeaderWallet/HeaderWallet";
-import { NotificationsBell } from "./NotificationsBell/NotificationsBell";
 import { UserInfo } from "./UserInfo/UserInfo";
 
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const loginPopup = useLoginPopup();
-
-  const isMobileHeader = useIsMobileHeader();
 
   const loginButton = (
     <a

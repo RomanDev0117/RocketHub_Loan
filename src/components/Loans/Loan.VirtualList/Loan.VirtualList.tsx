@@ -1,11 +1,9 @@
-import { VirtuosoGrid } from "react-virtuoso";
-import { forwardRef } from "react";
-import { isEmpty } from "lodash";
 import clsx from "clsx";
-import styles from "./Loan.VirtualList.module.scss";
-import { TWaxpeerItem } from "../../../types/waxpeer.types";
-import { TSteamItem } from "../../../types/steam.types";
+import { isEmpty } from "lodash";
+import { forwardRef } from "react";
+import { VirtuosoGrid } from "react-virtuoso";
 import { LoanItem } from "../Loan.Item/Loan.Item";
+import styles from "./Loan.VirtualList.module.scss";
 
 type TProps = {
   className?: string;

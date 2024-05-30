@@ -1,21 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  WITHDRAW_CRYPTO,
-  WITHDRAW_GAMES,
-  WITHDRAW_CARDS,
-} from '../../../../constants';
-import { PaymentMethods } from '../PaymentMethods/PaymentMethods';
+import { useDispatch, useSelector } from "react-redux";
+import { WITHDRAW_CRYPTO, WITHDRAW_GAMES } from "../../../../constants";
 import {
   selectSelectedPaymentMethod,
   walletPopupActions,
-} from '../../../../store/slices/walletPopupSlice';
+} from "../../../../store/slices/walletPopupSlice";
 import {
   CARD_TYPE,
   CRYPTO_CURRENCY,
   PAYMENT_METHOD,
-} from '../../../../types/payment.types';
-import { WithdrawCrypto } from '../WithdrawCrypto/WithdrawCrypto';
-import { WithdrawNoPaymentCo } from '../WithdrawNoPaymentCo/WithdrawNoPaymentCo';
+} from "../../../../types/payment.types";
+import { PaymentMethods } from "../PaymentMethods/PaymentMethods";
+import { WithdrawCrypto } from "../WithdrawCrypto/WithdrawCrypto";
+import { WithdrawNoPaymentCo } from "../WithdrawNoPaymentCo/WithdrawNoPaymentCo";
 
 export const TabWithdrawal = () => {
   const dispatch = useDispatch();
@@ -32,7 +28,7 @@ export const TabWithdrawal = () => {
         type="withdrawal"
         games={WITHDRAW_GAMES}
         crypto={WITHDRAW_CRYPTO}
-      // cards={WITHDRAW_CARDS}
+        // cards={WITHDRAW_CARDS}
       />
 
       {CARD_TYPE.BANK_REVOLUT === selected && <WithdrawNoPaymentCo />}

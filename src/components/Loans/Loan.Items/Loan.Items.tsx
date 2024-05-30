@@ -1,6 +1,9 @@
-import { useGameItemData } from "@/hooks/useGameItemData";
-import clsx from "clsx";
-import { useEffect, useMemo, useState } from "react";
+import {
+  loanActions,
+  selectLoanItems,
+  selectLoanSelectedItem,
+} from "@/store/slices/loan.slice";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   STEAM_APP_ID,
@@ -9,14 +12,8 @@ import {
 } from "../../../constants";
 import { useFilterItems } from "../../../hooks/useFilterItems";
 import { useGameType } from "../../../hooks/useGameType";
-import { useLoginPopup } from "../../../hooks/useLoginPopup";
 import { useGetWaxpeerItemsQuery } from "../../../store/slices/rockethubApi/waxpeer.endpoints";
 import { useGetSteamItemsQuery } from "../../../store/slices/steamItemsSlice";
-import {
-  selectUpgraderIsRotating,
-  selectUpgraderSelectedItems,
-  upgraderActions,
-} from "../../../store/slices/upgrader.slice";
 import { selectIsLoggedIn } from "../../../store/slices/userSlice";
 import { GAME_TYPE, SORT_BY } from "../../../types/caseTypes";
 import { TSteamItem } from "../../../types/steam.types";
@@ -27,23 +24,12 @@ import {
   getWaxpeerItemPrice,
   getWaxpeerMinFromPrice,
 } from "../../../utils/waxpeer.utils";
-import { DataLoadingError } from "../../DataLoadingError/DataLoadingError";
-import Loader from "../../Loader/Loader";
-import { NoDataMessage } from "../../Typography/Typography";
 import { LoanFilters } from "../Loan.Filters/Loan.Filters";
 import { LoanVirtualList } from "../Loan.VirtualList/Loan.VirtualList";
 import styles from "./Loan.Items.module.scss";
-import {
-  loanActions,
-  selectLoanItems,
-  selectLoanSelectedItem,
-} from "@/store/slices/loan.slice";
-import { TLoanItem } from "@/types/loan.types";
 
 export const LoanItems = () => {
   const dispatch = useDispatch();
-  const loginPopup = useLoginPopup();
-  const isRotating = useSelector(selectUpgraderIsRotating);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const selectedItem = useSelector(selectLoanSelectedItem);
   const loanItems = useSelector(selectLoanItems);
@@ -52,16 +38,10 @@ export const LoanItems = () => {
     defaultGame: GAME_TYPE.CSGO,
   });
 
-  const {
-    data: waxpeerItems,
-    isFetching: isWaxpeerFetching,
-    error: waxpeerError,
-  } = useGetWaxpeerItemsQuery(undefined, { skip: gameType !== GAME_TYPE.CSGO });
-  const {
-    data: steamItems,
-    isFetching: isSteamFetching,
-    error: steamError,
-  } = useGetSteamItemsQuery(
+  const { data: waxpeerItems } = useGetWaxpeerItemsQuery(undefined, {
+    skip: gameType !== GAME_TYPE.CSGO,
+  });
+  const { data: steamItems } = useGetSteamItemsQuery(
     {
       appId: STEAM_APP_ID,
       forceNew: false,
@@ -100,22 +80,15 @@ export const LoanItems = () => {
     });
   }, [gameType, steamItems, waxpeerItems]);
 
-  const {
-    items,
-    search,
-    setSearch,
-    sort,
-    setSort,
-    priceFilter,
-    setPriceFilter,
-  } = useFilterItems({
-    items: formattedItems,
-    searchKey: "name",
-    sort: SORT_BY.PRICE_DESC,
-    priceFilterEnabled: true,
-  });
+  const { search, setSearch, sort, setSort, priceFilter, setPriceFilter } =
+    useFilterItems({
+      items: formattedItems,
+      searchKey: "name",
+      sort: SORT_BY.PRICE_DESC,
+      priceFilterEnabled: true,
+    });
 
-  const [filteredItems, setFilteredItems] = useState<TLoanItem[]>([
+  const filteredItems = [
     {
       id: 0,
       sellCount: 2,
@@ -196,7 +169,7 @@ export const LoanItems = () => {
       price: 2.49,
       url: "/images/loans/gun_4.png",
     },
-  ]);
+  ];
 
   useEffect(() => {
     dispatch(loanActions.setItems(filteredItems));

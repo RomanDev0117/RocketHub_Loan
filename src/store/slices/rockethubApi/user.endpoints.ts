@@ -1,5 +1,4 @@
-import { RewardType } from '@/types/app.types';
-import { rockethubApi } from '.';
+import { rockethubApi } from ".";
 import {
   TErrorResponse,
   TGetUserDataBySteamIdResponse,
@@ -8,14 +7,14 @@ import {
   TRotateServerSeedSuccessResponse,
   TSimpleSuccessResponse,
   TTipUserSuccessResponse,
-} from '../../../types/api/api.types';
-import { RewardsAmountMap, TUser } from '../../../types/userTypes';
+} from "../../../types/api/api.types";
+import { RewardsAmountMap, TUser } from "../../../types/userTypes";
 
 export const extendedUserApi = rockethubApi.injectEndpoints({
   endpoints: (builder) => ({
     getCurrentUser: builder.query<{ user: TUser }, void>({
       query: () => ({
-        url: '/user',
+        url: "/user",
       }),
     }),
     tipUser: builder.mutation<
@@ -23,7 +22,7 @@ export const extendedUserApi = rockethubApi.injectEndpoints({
       { steamid: string; amount: number; displayInChat: boolean }
     >({
       query: ({ steamid, amount, displayInChat }) => ({
-        url: '/user/tip',
+        url: "/user/tip",
         body: {
           steamid,
           amount,
@@ -36,7 +35,7 @@ export const extendedUserApi = rockethubApi.injectEndpoints({
       void
     >({
       query: () => ({
-        url: '/user/rotateServerSeed',
+        url: "/user/rotateServerSeed",
       }),
     }),
     getUserDataBySteamId: builder.query<
@@ -49,8 +48,8 @@ export const extendedUserApi = rockethubApi.injectEndpoints({
     }),
     getUserRewards: builder.query<TGetUserRewardsResponseMapped, void>({
       query: () => ({
-        url: '/user/rewards',
-        method: 'GET',
+        url: "/user/rewards",
+        method: "GET",
       }),
       transformResponse: (response: TGetUserRewardsResponse) => {
         // nextClaim: 1702425600
@@ -118,14 +117,14 @@ export const extendedUserApi = rockethubApi.injectEndpoints({
           // ],
         };
       },
-      providesTags: ['UserRewards'],
+      providesTags: ["UserRewards"],
     }),
     redeemUserReward: builder.mutation<
       TSimpleSuccessResponse | TErrorResponse,
       { id: string; amount: number }
     >({
       query: (data) => ({
-        url: '/user/rewards/redeem',
+        url: "/user/rewards/redeem",
         body: data,
       }),
     }),
@@ -142,8 +141,8 @@ export const extendedUserApi = rockethubApi.injectEndpoints({
       boolean
     >({
       query: (enabled) => ({
-        url: '/user/notifications',
-        method: 'PUT',
+        url: "/user/notifications",
+        method: "PUT",
         body: {
           enabled,
         },

@@ -1,30 +1,17 @@
-import { useSelector } from "react-redux";
-import { Truncate } from "@components/Truncate/Truncate";
-import styles from "./UserInfo.module.scss";
-import {
-  selectLevelIcon,
-  selectUserAvatar,
-  selectUserLevel,
-  selectUserName,
-  selectUserWagered,
-} from "@store/slices/userSlice";
-import { useRef, useState } from "react";
-import { CaretDownIcon } from "@icons/CaretDownIcon";
-import { HeaderDropdownMenu } from "../HeaderDropdownMenu/HeaderDropdownMenu";
-import { useClickAway } from "react-use";
-import { useIsMobileHeader } from "@hooks/useMediaHooks";
-import { UserProgressBar } from "@/components/UserProgressBar/UserProgressBar";
-import { getLevelColor } from "@/utils/level.utils";
 import { Avatar } from "@/components/Avatar/Avatar";
+import { Truncate } from "@components/Truncate/Truncate";
+import { useIsMobileHeader } from "@hooks/useMediaHooks";
+import { selectUserAvatar, selectUserName } from "@store/slices/userSlice";
+import { useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { useClickAway } from "react-use";
+import { HeaderDropdownMenu } from "../HeaderDropdownMenu/HeaderDropdownMenu";
+import styles from "./UserInfo.module.scss";
 
 export const UserInfo = () => {
   const avatar = useSelector(selectUserAvatar);
   const userName = useSelector(selectUserName);
-  const levelIcon = useSelector(selectLevelIcon);
   const isMobileHeadder = useIsMobileHeader();
-  const lvl = useSelector(selectUserLevel);
-  const wagered = useSelector(selectUserWagered);
-  const progressBarColor = getLevelColor(lvl);
 
   const [menuOpen, setMenuOpen] = useState(false);
   // click away for dropdown

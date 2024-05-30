@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import {
   ChangeEvent,
   ChangeEventHandler,
@@ -5,10 +6,9 @@ import {
   InputHTMLAttributes,
   forwardRef,
 } from "react";
-import { NumericFormat, NumericFormatProps } from "react-number-format";
-import styles from "./TextField.module.scss";
-import clsx from "clsx";
 import { useController } from "react-hook-form";
+import { NumericFormatProps } from "react-number-format";
+import styles from "./TextField.module.scss";
 
 export type TTextFieldPropsBase = {
   label?: React.ReactNode;

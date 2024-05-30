@@ -1,7 +1,5 @@
-import { faChevronDown } from "@fortawesome/pro-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Manager, Reference } from "react-popper";
 import { Truncate } from "../Truncate/Truncate";
 import styles from "./Dropdown.module.scss";

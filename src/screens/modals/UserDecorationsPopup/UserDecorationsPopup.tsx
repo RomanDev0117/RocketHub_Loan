@@ -1,12 +1,10 @@
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Modal } from '../../../components/Modal/Modal';
-import { useForm } from 'react-hook-form';
-import { useEffect, useMemo } from 'react';
-import styles from './UserDecorationsPopup.module.scss';
-import { Title28 } from '@/components/Typography/Typography';
-import { Spacer } from '@/components/Spacer/Spacer';
-import { UserDecorationsLibrary } from './components/UserDecorationsLibrary/UserDecorationsLibrary';
+import { Spacer } from "@/components/Spacer/Spacer";
+import { Title28 } from "@/components/Typography/Typography";
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { Modal } from "../../../components/Modal/Modal";
+import styles from "./UserDecorationsPopup.module.scss";
+import { UserDecorationsLibrary } from "./components/UserDecorationsLibrary/UserDecorationsLibrary";
 
 type TFormValues = {
   amount: number;
@@ -16,8 +14,6 @@ const DEFAULT_AMOUNT = 10;
 
 export const UserDecorationsPopup = () => {
   const show = true;
-
-
 
   // const [tipRainApi, tipRainResult] = useTipRainMutation();
   // useHandleApiError({
@@ -37,12 +33,10 @@ export const UserDecorationsPopup = () => {
   //   });
   // }, []);
 
-  const { handleSubmit, control, reset, formState } = useForm<TFormValues>({
-    mode: 'onChange',
+  const { reset } = useForm<TFormValues>({
+    mode: "onChange",
     // resolver: yupResolver(schema),
-    defaultValues: {
-
-    },
+    defaultValues: {},
   });
 
   useEffect(() => {
@@ -50,15 +44,6 @@ export const UserDecorationsPopup = () => {
       reset({ amount: DEFAULT_AMOUNT });
     }
   }, [show, reset]);
-
-  const handleFormSubmit = async (values: TFormValues) => {
-    try {
-      throw new Error('Not implemented yet');
-    } catch (error) {
-      // error is handled by error hook
-    }
-
-  };
 
   return (
     <>
@@ -74,7 +59,6 @@ export const UserDecorationsPopup = () => {
         <Spacer y={20} />
 
         <UserDecorationsLibrary />
-
       </Modal>
     </>
   );

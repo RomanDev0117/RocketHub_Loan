@@ -1,40 +1,8 @@
-import { useGameItemData } from "@/hooks/useGameItemData";
-import clsx from "clsx";
-import { useMemo, useState } from "react";
+import { loanActions, selectLoanItems } from "@/store/slices/loan.slice";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  STEAM_APP_ID,
-  UPGRADER_MAX_ITEMS_PRICE,
-  UPGRADER_MIN_ITEMS_PRICE,
-} from "../../../constants";
-import { useFilterItems } from "../../../hooks/useFilterItems";
-import { useGameType } from "../../../hooks/useGameType";
-import { useLoginPopup } from "../../../hooks/useLoginPopup";
-import { useGetWaxpeerItemsQuery } from "../../../store/slices/rockethubApi/waxpeer.endpoints";
-import { useGetSteamItemsQuery } from "../../../store/slices/steamItemsSlice";
-import {
-  selectUpgraderIsRotating,
-  selectUpgraderSelectedItems,
-  upgraderActions,
-} from "../../../store/slices/upgrader.slice";
-import { selectIsLoggedIn } from "../../../store/slices/userSlice";
-import { GAME_TYPE, SORT_BY } from "../../../types/caseTypes";
-import { TSteamItem } from "../../../types/steam.types";
-import { TWaxpeerItem } from "../../../types/waxpeer.types";
-import { isWaxpeerItem } from "../../../utils/app.utils";
-import { toFixed } from "../../../utils/number.utils";
-import {
-  getWaxpeerItemPrice,
-  getWaxpeerMinFromPrice,
-} from "../../../utils/waxpeer.utils";
-import { DataLoadingError } from "../../DataLoadingError/DataLoadingError";
-import Loader from "../../Loader/Loader";
-import { NoDataMessage } from "../../Typography/Typography";
-import { LoanFilters } from "../Loan.Filters/Loan.Filters";
+import { selectUpgraderSelectedItems } from "../../../store/slices/upgrader.slice";
 import { LoanVirtualList } from "../Loan.VirtualList/Loan.VirtualList";
 import styles from "./LoanOffer.Items.module.scss";
-import { TLoanItem } from "@/types/loan.types";
-import { loanActions, selectLoanItems } from "@/store/slices/loan.slice";
 
 export const LoanOfferItems = () => {
   const selectedItems = useSelector(selectUpgraderSelectedItems);
@@ -66,7 +34,7 @@ export const LoanOfferItems = () => {
         <LoanVirtualList
           items={loanOfferItems || []}
           isSelected={(item) => selectedItems.includes(item)}
-          onItemClick={(item) => {}}
+          onItemClick={() => {}}
           isOffered={true}
         />
       </div>

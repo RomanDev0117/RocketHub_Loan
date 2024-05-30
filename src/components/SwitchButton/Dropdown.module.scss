@@ -26,13 +26,7 @@
   }
 }
 
-.levelText {
-  font-family: var(--font-poppins);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #fff;
-  letter-spacing: 0.48px;
+.helperText {
 }
 
 .placeholderContainer {
@@ -54,7 +48,7 @@
 
 .placeholderInput {
   padding: 0;
-  height: var(--dropdown-height, 40px);
+  height: 80px;
   background-color: transparent;
   border: none;
   outline: none;

@@ -1,31 +1,30 @@
+import { AccountRockIcon } from "@/components/icons/notifications/AccountRockIcon";
+import { DepositIcon } from "@/components/icons/notifications/DepositIcon";
+import { LevelUpIcon } from "@/components/icons/notifications/LevelUpIcon";
+import { LoungeIcon } from "@/components/icons/notifications/LoungeIcon";
+import { RainIcon } from "@/components/icons/notifications/RainIcon";
+import { RewardIcon } from "@/components/icons/notifications/RewardIcon";
+import { SystemIcon } from "@/components/icons/notifications/SystemIcon";
+import { TipsIcon } from "@/components/icons/notifications/TipsIcon";
+import { WithdrawIcon } from "@/components/icons/notifications/WithdrawIcon";
+import { DepositRewardType, RewardType } from "@/types/app.types";
+import { NotificationType } from "@/types/notification.types";
+import { captureException } from "@sentry/react";
+import binance from "../assets/images/icons/crypto/binance-coin.svg";
+import bitcoin from "../assets/images/icons/crypto/bitcoin.svg";
+import busd from "../assets/images/icons/crypto/busd.svg";
+import ethereum from "../assets/images/icons/crypto/ethereum.svg";
+import litecoin from "../assets/images/icons/crypto/litecoin.svg";
+import tron from "../assets/images/icons/crypto/tron-coin.svg";
+import usdt from "../assets/images/icons/crypto/usdt.svg";
+import { TOption } from "../components/Dropdown/Dropdown";
 import {
   CARD_TYPE,
   CRYPTO_CURRENCY,
   PAYMENT_TYPE_GAME,
-  PaymentBadge,
-} from '../types/payment.types';
-import bitcoin from '../assets/images/icons/crypto/bitcoin.svg';
-import ethereum from '../assets/images/icons/crypto/ethereum.svg';
-import usdt from '../assets/images/icons/crypto/usdt.svg';
-import litecoin from '../assets/images/icons/crypto/litecoin.svg';
-import binance from '../assets/images/icons/crypto/binance-coin.svg';
-import tron from '../assets/images/icons/crypto/tron-coin.svg';
-import busd from '../assets/images/icons/crypto/busd.svg';
-import { ROUTE } from '../types/routeTypes';
-import { captureException } from '@sentry/react';
-import { TOption } from '../components/Dropdown/Dropdown';
-import { WOFColor } from '../types/wheelOfFortune.types';
-import { NotificationType } from '@/types/notification.types';
-import { DepositIcon } from '@/components/icons/notifications/DepositIcon';
-import { WithdrawIcon } from '@/components/icons/notifications/WithdrawIcon';
-import { RewardIcon } from '@/components/icons/notifications/RewardIcon';
-import { SystemIcon } from '@/components/icons/notifications/SystemIcon';
-import { TipsIcon } from '@/components/icons/notifications/TipsIcon';
-import { LevelUpIcon } from '@/components/icons/notifications/LevelUpIcon';
-import { RainIcon } from '@/components/icons/notifications/RainIcon';
-import { LoungeIcon } from '@/components/icons/notifications/LoungeIcon';
-import { DepositRewardType, RewardType } from '@/types/app.types';
-import { AccountRockIcon } from '@/components/icons/notifications/AccountRockIcon';
+} from "../types/payment.types";
+import { ROUTE } from "../types/routeTypes";
+import { WOFColor } from "../types/wheelOfFortune.types";
 
 if (
   !import.meta.env.VITE_APP_API_BASE ||
@@ -33,7 +32,7 @@ if (
   !import.meta.env.VITE_APP_STATIC_BASE_URL ||
   !import.meta.env.VITE_APP_BASE_URL
 ) {
-  const error = new Error('.env Configuration is incorrect');
+  const error = new Error(".env Configuration is incorrect");
   captureException(error);
   throw error;
 }
@@ -46,24 +45,24 @@ export const API_BASE_URL = import.meta.env.VITE_APP_API_BASE;
 export const AUTH_URL = import.meta.env.VITE_APP_AUTH_URL as string;
 export const STATIC_BASE_URL = import.meta.env
   .VITE_APP_STATIC_BASE_URL as string;
-export const STEAM_AUTH_URL = AUTH_URL + '/auth/steam';
-export const UPLOADS_URL = BASE_URL + '/uploads';
+export const STEAM_AUTH_URL = AUTH_URL + "/auth/steam";
+export const UPLOADS_URL = BASE_URL + "/uploads";
 export const NO_PAYMENT_CO_IFRAME_BASE_URL = import.meta.env
   .VITE_APP_NO_PAYMENT_CO_IFRAME_BASE_URL;
 
 // local storage
-export const LS_REFERRAL_KEY = 'RH_REFERRAL_DATA';
-export const LS_SPECTATOR_LOUNGE_LOG = 'RH_SPECTATOR_LOUNGE_LOG';
+export const LS_REFERRAL_KEY = "RH_REFERRAL_DATA";
+export const LS_SPECTATOR_LOUNGE_LOG = "RH_SPECTATOR_LOUNGE_LOG";
 
 // Social links
-export const DISCORD_CHANNEL_URL = 'https://discord.com/invite/rockethub';
+export const DISCORD_CHANNEL_URL = "https://discord.com/invite/rockethub";
 
 // Chat
 export const CHAT_MESSAGE_MAX_LENGTH = 140;
 
 // User
 export const MIN_USER_LEVEL = 0;
-export const DEFAULT_USER_AVATAR = '';
+export const DEFAULT_USER_AVATAR = "";
 
 // TOAST
 export const MAX_TOAST_COUNT = 5;
@@ -78,8 +77,8 @@ export const SPIN_ANIMAION_DURAION = {
 export const HEADER_BALANCE_COUNT_UP_DURATION = 1;
 
 // Sorting
-export const ASC = 'ASC';
-export const DESC = 'DESC';
+export const ASC = "ASC";
+export const DESC = "DESC";
 
 // Payment
 export const STEAM_APP_ID = 252490;
@@ -202,13 +201,13 @@ export const WITHDRAW_CARDS = [CARD_TYPE.BANK_REVOLUT];
 export const WITHDRAW_CRYPTO = PAYMENT_CRYPTO;
 
 export const CRYPTO_NAME_MAP = {
-  [CRYPTO_CURRENCY.BITCOIN]: 'Bitcoin',
-  [CRYPTO_CURRENCY.ETHEREUM]: 'Ethereum',
-  [CRYPTO_CURRENCY.USDT]: 'USDT',
-  [CRYPTO_CURRENCY.LITECOIN]: 'Litecoin',
-  [CRYPTO_CURRENCY.BINANCE_COIN]: 'BNB',
-  [CRYPTO_CURRENCY.BUSD]: 'BUSD',
-  [CRYPTO_CURRENCY.TRON]: 'TRON',
+  [CRYPTO_CURRENCY.BITCOIN]: "Bitcoin",
+  [CRYPTO_CURRENCY.ETHEREUM]: "Ethereum",
+  [CRYPTO_CURRENCY.USDT]: "USDT",
+  [CRYPTO_CURRENCY.LITECOIN]: "Litecoin",
+  [CRYPTO_CURRENCY.BINANCE_COIN]: "BNB",
+  [CRYPTO_CURRENCY.BUSD]: "BUSD",
+  [CRYPTO_CURRENCY.TRON]: "TRON",
 };
 
 // route constants
@@ -229,43 +228,43 @@ export const REFERRAL_CODE_MIN_LENGTH = 1;
 
 export const CRYPTO_CURRENCY_MAP = {
   [CRYPTO_CURRENCY.BITCOIN]: {
-    color: 'rgba(253, 147, 18, 0.60)',
+    color: "rgba(253, 147, 18, 0.60)",
     img: bitcoin,
     // badge: null,
     rewardType: DepositRewardType.AlphapoBtc,
   },
   [CRYPTO_CURRENCY.ETHEREUM]: {
-    color: 'rgba(144, 144, 144, 0.60)',
+    color: "rgba(144, 144, 144, 0.60)",
     img: ethereum,
     // badge: null,
     rewardType: DepositRewardType.AlphapoEth,
   },
   [CRYPTO_CURRENCY.USDT]: {
-    color: 'rgba(95, 179, 156, 0.60)',
+    color: "rgba(95, 179, 156, 0.60)",
     img: usdt,
     // badge: PaymentBadge.FREE_CRATE,
     rewardType: DepositRewardType.AlphapoUsdtt,
   },
   [CRYPTO_CURRENCY.LITECOIN]: {
-    color: 'rgba(69, 106, 163, 0.60)',
+    color: "rgba(69, 106, 163, 0.60)",
     img: litecoin,
     // badge: null,
     rewardType: DepositRewardType.AlphapoLtc,
   },
   [CRYPTO_CURRENCY.BUSD]: {
-    color: 'rgba(240, 185, 11, 0.6)',
+    color: "rgba(240, 185, 11, 0.6)",
     img: busd,
     // badge: null,
     rewardType: null,
   },
   [CRYPTO_CURRENCY.BINANCE_COIN]: {
-    color: 'rgba(240, 185, 11, 0.60)',
+    color: "rgba(240, 185, 11, 0.60)",
     img: binance,
     // badge: null,
     rewardType: null,
   },
   [CRYPTO_CURRENCY.TRON]: {
-    color: 'rgba(240, 185, 11, 0.60)',
+    color: "rgba(240, 185, 11, 0.60)",
     img: tron,
     // badge: PaymentBadge.FREE_CRATE,
     rewardType: DepositRewardType.AlphapoTrx,
@@ -273,8 +272,8 @@ export const CRYPTO_CURRENCY_MAP = {
 };
 
 // local storage keys
-export const LS_SELECTED_GAME_TYPE = 'R_SELECTED_GAME_TYPE';
-export const LS_SOUND = 'R_SOUND';
+export const LS_SELECTED_GAME_TYPE = "R_SELECTED_GAME_TYPE";
+export const LS_SOUND = "R_SOUND";
 
 export const COIN_EXP_EXCHANGE = 5;
 
@@ -293,32 +292,32 @@ export const UPGRADER_ANIMATION_DURATION_MS = 5000;
 // common
 export const priceRangeOptions: TOption[] = [
   {
-    value: '0-',
-    label: 'All',
+    value: "0-",
+    label: "All",
   },
   {
-    value: '0-5',
-    label: '0 — 5',
+    value: "0-5",
+    label: "0 — 5",
   },
   {
-    value: '5-25',
-    label: '5 — 25',
+    value: "5-25",
+    label: "5 — 25",
   },
   {
-    value: '25-50',
-    label: '25 — 50',
+    value: "25-50",
+    label: "25 — 50",
   },
   {
-    value: '50-100',
-    label: '50 — 100',
+    value: "50-100",
+    label: "50 — 100",
   },
   {
-    value: '100-250',
-    label: '100 — 250',
+    value: "100-250",
+    label: "100 — 250",
   },
   {
-    value: '250-',
-    label: '250 +',
+    value: "250-",
+    label: "250 +",
   },
 ];
 
@@ -349,7 +348,7 @@ type NotificationConfigItem = {
   progressColor: string;
 };
 
-export const SS_HIDDEN_SYSTEM_NOTIFICATIONS = 'RH_HIDDEN_SYSTEM_NOTIFICATIONS';
+export const SS_HIDDEN_SYSTEM_NOTIFICATIONS = "RH_HIDDEN_SYSTEM_NOTIFICATIONS";
 
 export const NOTIFICATIONS_CONFIG: Record<
   NotificationType,
@@ -357,95 +356,95 @@ export const NOTIFICATIONS_CONFIG: Record<
 > = {
   [NotificationType.CryptoDeposit]: {
     Icon: DepositIcon,
-    title: 'Deposit',
-    borderColor: 'rgba(76, 113, 162, 0.30)',
-    glowImageName: 'glow-deposit.png',
-    progressColor: '#4C71A2',
+    title: "Deposit",
+    borderColor: "rgba(76, 113, 162, 0.30)",
+    glowImageName: "glow-deposit.png",
+    progressColor: "#4C71A2",
   },
   [NotificationType.CryptoWithdraw]: {
     Icon: WithdrawIcon,
-    title: 'Withdraw',
-    borderColor: 'rgba(175, 165, 103, 0.20)',
-    glowImageName: 'glow-withdraw.png',
-    progressColor: '#AFA567',
+    title: "Withdraw",
+    borderColor: "rgba(175, 165, 103, 0.20)",
+    glowImageName: "glow-withdraw.png",
+    progressColor: "#AFA567",
   },
   [NotificationType.SteamDeposit]: {
     Icon: DepositIcon,
-    title: 'Deposit',
-    borderColor: 'rgba(76, 113, 162, 0.30)',
-    glowImageName: 'glow-deposit.png',
-    progressColor: '#4C71A2',
+    title: "Deposit",
+    borderColor: "rgba(76, 113, 162, 0.30)",
+    glowImageName: "glow-deposit.png",
+    progressColor: "#4C71A2",
   },
   [NotificationType.SkinsbackDeposit]: {
     Icon: DepositIcon,
-    title: 'Deposit',
-    borderColor: 'rgba(76, 113, 162, 0.30)',
-    glowImageName: 'glow-deposit.png',
-    progressColor: '#4C71A2',
+    title: "Deposit",
+    borderColor: "rgba(76, 113, 162, 0.30)",
+    glowImageName: "glow-deposit.png",
+    progressColor: "#4C71A2",
   },
   [NotificationType.SkinsbackWithdraw]: {
     Icon: WithdrawIcon,
-    title: 'Withdraw',
-    borderColor: 'rgba(175, 165, 103, 0.20)',
-    glowImageName: 'glow-withdraw.png',
-    progressColor: '#AFA567',
+    title: "Withdraw",
+    borderColor: "rgba(175, 165, 103, 0.20)",
+    glowImageName: "glow-withdraw.png",
+    progressColor: "#AFA567",
   },
   [NotificationType.WaxpeerWithdraw]: {
     Icon: WithdrawIcon,
-    title: 'Withdraw',
-    borderColor: 'rgba(175, 165, 103, 0.20)',
-    glowImageName: 'glow-withdraw.png',
-    progressColor: '#AFA567',
+    title: "Withdraw",
+    borderColor: "rgba(175, 165, 103, 0.20)",
+    glowImageName: "glow-withdraw.png",
+    progressColor: "#AFA567",
   },
   [NotificationType.Reward]: {
     Icon: RewardIcon,
-    title: 'Reward',
-    borderColor: 'rgba(112, 164, 59, 0.20)',
-    glowImageName: 'glow-reward.png',
-    progressColor: '#5E8841',
+    title: "Reward",
+    borderColor: "rgba(112, 164, 59, 0.20)",
+    glowImageName: "glow-reward.png",
+    progressColor: "#5E8841",
   },
 
   [NotificationType.LevelUp]: {
     Icon: LevelUpIcon,
-    title: 'Level up!',
-    borderColor: 'rgba(97, 76, 173, 0.30)',
-    glowImageName: 'glow-level-up.png',
-    progressColor: '#4C71A2',
+    title: "Level up!",
+    borderColor: "rgba(97, 76, 173, 0.30)",
+    glowImageName: "glow-level-up.png",
+    progressColor: "#4C71A2",
   },
   [NotificationType.Tip]: {
     Icon: TipsIcon,
-    title: 'Tips Received',
-    borderColor: 'rgba(140, 70, 55, 0.30)',
-    glowImageName: 'glow-tip.png',
-    progressColor: '#8D4637',
+    title: "Tips Received",
+    borderColor: "rgba(140, 70, 55, 0.30)",
+    glowImageName: "glow-tip.png",
+    progressColor: "#8D4637",
   },
   [NotificationType.AccountLock]: {
     Icon: AccountRockIcon,
-    title: 'Account locked!',
-    borderColor: 'rgba(198, 40, 40, 0.3)',
-    glowImageName: 'glow-account-lock.png',
-    progressColor: '#C62828',
+    title: "Account locked!",
+    borderColor: "rgba(198, 40, 40, 0.3)",
+    glowImageName: "glow-account-lock.png",
+    progressColor: "#C62828",
   },
   [NotificationType.WithdrawalLock]: {
     Icon: AccountRockIcon,
-    title: 'Withdrawal locked!',
-    borderColor: 'rgba(198, 40, 40, 0.3)',
-    glowImageName: 'glow-account-lock.png',
-    progressColor: '#C62828',
+    title: "Withdrawal locked!",
+    borderColor: "rgba(198, 40, 40, 0.3)",
+    glowImageName: "glow-account-lock.png",
+    progressColor: "#C62828",
   },
   [NotificationType.Rain]: {
     Icon: RainIcon,
-    title: 'Rain notification',
-    borderColor: 'rgba(76, 113, 162, 0.30)',
-    glowImageName: 'glow-rain.png',
-    progressColor: '#4C71A2',
+    title: "Rain notification",
+    borderColor: "rgba(76, 113, 162, 0.30)",
+    glowImageName: "glow-rain.png",
+    progressColor: "#4C71A2",
   },
   [NotificationType.BitInvestorDeposit]: {
     Icon: DepositIcon,
-    title: 'Deposit',
-    borderColor: 'rgba(76, 113, 162, 0.30)',
-    glowImageName: 'glow-deposit.png',
-    progressColor: '#4C71A2',
+    title: "Deposit",
+    borderColor: "rgba(76, 113, 162, 0.30)",
+    glowImageName: "glow-deposit.png",
+    progressColor: "#4C71A2",
   },
   // [NotificationType.SpectatorLounge]: {
   //   Icon: DepositIcon,
@@ -456,38 +455,38 @@ export const NOTIFICATIONS_CONFIG: Record<
   // },
   [NotificationType.NotapaymentWithdraw]: {
     Icon: WithdrawIcon,
-    title: 'Withdraw',
-    borderColor: 'rgba(175, 165, 103, 0.20)',
-    glowImageName: 'glow-withdraw.png',
-    progressColor: '#AFA567',
+    title: "Withdraw",
+    borderColor: "rgba(175, 165, 103, 0.20)",
+    glowImageName: "glow-withdraw.png",
+    progressColor: "#AFA567",
   },
   [NotificationType.SpectatorLounge]: {
     Icon: LoungeIcon,
-    title: 'Lounge surfer',
-    borderColor: 'rgba(97, 76, 173, 0.30)',
-    glowImageName: 'glow-level-up.png',
-    progressColor: '#614CAD',
+    title: "Lounge surfer",
+    borderColor: "rgba(97, 76, 173, 0.30)",
+    glowImageName: "glow-level-up.png",
+    progressColor: "#614CAD",
   },
   [NotificationType.Email]: {
     Icon: SystemIcon,
-    title: 'Email',
-    borderColor: 'rgba(97, 76, 173, 0.30)',
-    glowImageName: 'glow-level-up.png',
-    progressColor: '#614CAD',
+    title: "Email",
+    borderColor: "rgba(97, 76, 173, 0.30)",
+    glowImageName: "glow-level-up.png",
+    progressColor: "#614CAD",
   },
   [NotificationType.Zen]: {
     Icon: DepositIcon,
-    title: 'Deposit',
-    borderColor: 'rgba(175, 165, 103, 0.20)',
-    glowImageName: 'glow-withdraw.png',
-    progressColor: '#AFA567',
+    title: "Deposit",
+    borderColor: "rgba(175, 165, 103, 0.20)",
+    glowImageName: "glow-withdraw.png",
+    progressColor: "#AFA567",
   },
   [NotificationType.System]: {
     // this notification will be shown in different way
     Icon: SystemIcon,
-    title: 'System',
-    borderColor: '#ad1e1e',
-    progressColor: '#8D4637',
+    title: "System",
+    borderColor: "#ad1e1e",
+    progressColor: "#8D4637",
   },
 };
 
@@ -496,7 +495,7 @@ export const MAX_VAULT_DEPOSIT_AMOUNT = 10000;
 export const MAX_VAULT_LOCK_DURATION_HOURS = 1000;
 
 // Intercom
-export const INTERCOM_APP_ID = 'g3ynxaj7';
+export const INTERCOM_APP_ID = "g3ynxaj7";
 
 // rewards
 export const levelRewards = [

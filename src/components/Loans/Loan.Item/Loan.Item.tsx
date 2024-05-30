@@ -1,14 +1,8 @@
-import clsx from "clsx";
-import { useGameItemData } from "../../../hooks/useGameItemData";
-import { TSteamItem } from "../../../types/steam.types";
-import { TWaxpeerItem } from "../../../types/waxpeer.types";
-import { Truncate } from "../../Truncate/Truncate";
-import styles from "./Loan.Item.module.scss";
-import { GlowIcon } from "../../icons/GlowIcon";
-import { PriceWithCoin } from "../../PriceWithCoin/PriceWithCoin";
-import { StarsIcon } from "@/components/icons/StarsIcon";
 import { loanActions } from "@/store/slices/loan.slice";
+import clsx from "clsx";
 import { useDispatch } from "react-redux";
+import { GlowIcon } from "../../icons/GlowIcon";
+import styles from "./Loan.Item.module.scss";
 
 type TProps = {
   item: any;
