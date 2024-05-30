@@ -86,7 +86,7 @@ export default {
   },
 
   afterConnection() {
-    //if (!userApi.isToken()) return;
+    if (!userApi.isToken()) return;
 
     userApi
       .getUserDataFromToken()
