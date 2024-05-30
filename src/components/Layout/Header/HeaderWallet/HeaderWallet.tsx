@@ -1,16 +1,15 @@
-import { Button } from '@/components/Button/Button';
-import { HeaderUserBalance } from '../HeaderUserBalance/HeaderUserBalance';
-import { WalletIcon } from '@/components/icons/WalletIcon';
-import styles from './HeaderWallet.module.scss';
-import { T } from '@/i18n/translate';
-import { useWalletPopup } from '@/hooks/useWalletPopup';
-import { useIsMobileHeader } from '@/hooks/useMediaHooks';
+import { Button } from "@/components/Button/Button";
+import { WalletIcon } from "@/components/icons/WalletIcon";
+import styles from "./HeaderWallet.module.scss";
+import { T } from "@/i18n/translate";
+import { useWalletPopup } from "@/hooks/useWalletPopup";
+import { useIsMobileHeader } from "@/hooks/useMediaHooks";
 import {
   closeNotifications,
   collapseSidebar,
-} from '@/store/actions/appActions';
-import { HeaderVault } from '../HeaderVault/HeaderVault';
-import { useState } from 'react';
+} from "@/store/actions/appActions";
+import { HeaderVault } from "../HeaderVault/HeaderVault";
+import { useState } from "react";
 
 export const HeaderWallet = () => {
   const { openWallet } = useWalletPopup();
@@ -35,14 +34,13 @@ export const HeaderWallet = () => {
   return (
     <div
       className={styles.walletContainer}
-    // onClick={handleWalletContainerClick}
+      // onClick={handleWalletContainerClick}
     >
       <div
         className={styles.balanceContainer}
         onMouseEnter={() => setVaultVisible(true)}
         onMouseLeave={() => setVaultVisible(false)}
       >
-        <HeaderUserBalance />
         <HeaderVault visible={vaultVisible} />
       </div>
       <Button
