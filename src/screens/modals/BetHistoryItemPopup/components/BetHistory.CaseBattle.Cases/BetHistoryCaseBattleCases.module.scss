@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  position: relative;
+}
+
+.image {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+}
+
+.amount {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 103.95px;
+  background: rgba(36, 40, 51, 0.4);
+  backdrop-filter: blur(4.199999809265137px);
+  padding: 8.4px;
+  font-size: 13.65px;
+  font-weight: 800;
+  line-height: 16.8px;
+  letter-spacing: 0.409px;
+}

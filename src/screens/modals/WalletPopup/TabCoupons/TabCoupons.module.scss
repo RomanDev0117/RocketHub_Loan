@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 286px;
+}
+
+.couponImg {
+  // width: 240px;
+  height: 100px;
+  width: auto;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 36px;
+  letter-spacing: normal;
+}
+
+.info {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 12px;
+  letter-spacing: -0.09px;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--grey-300);
+      text-decoration: none;
+    }
+  }
+}
+
+.couponIcon {
+  height: 22px;
+  width: auto;
+}
+
+.button {
+  height: 66px !important;
+}

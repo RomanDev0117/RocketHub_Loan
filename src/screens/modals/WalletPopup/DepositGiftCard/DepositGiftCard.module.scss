@@ -1,0 +1,21 @@
+@import "@styles/mixins";
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.submitButton {
+  margin-top: 46px;
+
+  @include sm {
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,251 @@
+@import "./mixins";
+
+:root {
+  font-family: Nunito, "Poppins", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* colors */
+  --crazy-green: #5efc4f;
+  // --grey-50: #f9fafb;
+  // --grey-200: #e5e7eb;
+  // --grey-300: #d1d5db;
+  // --grey-400: #9ca3af;
+  // --grey-500: #6b7280;
+  // --grey-600: #4b5563;
+  // --grey-700: #374151;
+  // --grey-750: #283242;
+  // --grey-800: #1f2937;
+  // --grey-850: #192432;
+  // --grey-900: #111827;
+  // --grey-950: #030712;
+
+  --losermode: #9747ff;
+
+  --white: #ffffff;
+  // --modal-bg: var(--grey-750);
+  --modal-bg: var(--grey-900);
+  --modal-footer-bg: var(--grey-850);
+  --box-bg: var(--grey-800);
+
+  --primary-color: #43c54b;
+  --secondary-color: #f7971d;
+
+  --green: #5efc4f;
+  --red: #f00;
+
+  --orange-700: #ff7f0a;
+
+  --error: #f00;
+  --danger: #db3030;
+  --danger-hover: #f30d0d;
+
+  /* sizes */
+  --header-size: 62px;
+  --page-container-padding-top: calc(var(--header-size) + 34px);
+  --footer-height: 339px;
+  --case-battle-game-height: 404px;
+  --case-battle-header-height: 73px;
+  --sidebar-expanded-width: 230px;
+  --sidebar-collapsed-width: 50px;
+  --chat-width: 280px;
+  --content-padding: 75px;
+  --border-radius-small: 8px; // 10px;
+  --border-radius: 8px; // 12px
+  --border-radius-medium: 8px; // 16px
+  --border-radius-large: 8px; // 20px;
+  --border-radius-huge: 8px; //36px;
+
+  // --pressable-button-radius: 14px;
+  --pressable-button-radius: 8px;
+  --pressable-button-huge-radius: 8px; // 19px
+  --avatar-border-radius: 12px; // 10px;
+  --avatar-shadow-border-radius: 13px; // 11px;
+  --chat-avatar-border-radius: 8px; // 8px;
+  --case-battle-avatar-radius: 8px; // 10px
+  --single-case-open-wheel-radius: 8px; // 28px;
+  --add-case-modal-radius: 8px; //36px;
+  --wallet-modal-radius: 16px; //36px;
+  --wallet-modal-input-radius: 8px; //14;
+  --input-border-radius: 8px;
+
+  --case-battle-wheel-radius: 8px; // 28px;
+  --case-battles-list-item: 8px; // 28px;
+  --case-battles-cases-radius: 8px; // 18px;
+  --case-battle-case-item-radius: 8px; // 14px
+
+  --main-content-height: calc(100vh - var(--page-container-padding-top));
+
+  --wheel-slot-height: 400px;
+  --case-battle-slot-player-height: 90px;
+
+  /* zIndex */
+  --zIndex-header: 22;
+  --zIndex-sidebar: 21;
+  --zIndex-chat-button: 21;
+  --zIndex-modal: 1040;
+  --zIndex-mobile-chat: 1039;
+  --zIndex-system-notification: 1030;
+  --zIndex-rain: 1029;
+
+  /* fonts */
+  --font-primary: "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+
+  // --easing: cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  // --easing: cubic-bezier(0.22, 0.68, 0, 1.71);
+  // --easing: cubic-bezier(0.57, 0.21, 0.69, 3.25);
+  // --easing: cubic-bezier(0.25, 0.75, 0.5, 1.25);
+  // --easing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+  --easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing2: cubic-bezier(0.22, 0.68, 0, 1.71);
+  // --easing: cubic-bezier(0.5, -0.75, 0.7, 2);
+  // --easing: cubic-bezier(.42,.97,.52,1.49);
+  // --easing: cubic-bezier(0.32, 2, 0.55, 0.27);
+  // --easing: cubic-bezier(0.17, 0.67, 1, 1.23);
+
+  --wheel-easing: cubic-bezier(0.24, 0.95, 0.49, 1);
+  // --wheel-item-easing: cubic-bezier(0.17, 0.67, 0.86, 1);
+  --wheel-item-easing: ease;
+  // --wheel-item-easing: linear;
+  --upgrader-animation-duration: 5s;
+
+  // --transition: all 0.15s ease-in-out;
+  --transition: all 0.15s var(--easing);
+  --transition-medium: all 0.3s var(--easing);
+}
+
+@media screen and (max-width: 1600px) {
+  :root {
+    --content-padding: 24px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --case-battle-avatar-radius: 4px;
+    --avatar-shadow-border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: $noChat) {
+  :root {
+    // --header-size: 62px;
+    --page-container-padding-top: calc(var(--header-size) + 24px);
+    // --footer-height: 339px;
+    // --case-battle-game-height: 404px;
+    // --case-battle-header-height: 73px;
+    // --sidebar-expanded-width: 230px;
+    // --sidebar-collapsed-width: 50px;
+    // --chat-width: 280px;
+    --content-padding: 24px;
+    // --border-radius-small: 8px; // 10px;
+    // --border-radius: 8px; // 12px
+    // --border-radius-medium: 8px; // 16px
+    // --border-radius-large: 8px; // 20px;
+    // --border-radius-huge: 8px; //36px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  :root {
+    --case-battle-avatar-radius: 4px;
+    --avatar-shadow-border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  :root {
+    --header-size: 60px;
+    --page-container-padding-top: calc(var(--header-size) + 24px);
+    // --footer-height: 339px;
+    // --case-battle-game-height: 404px;
+    // --case-battle-header-height: 73px;
+    // --sidebar-expanded-width: 230px;
+    // --sidebar-collapsed-width: 50px;
+    // --chat-width: 280px;
+    --content-padding: 24px;
+    // --border-radius-small: 8px; // 10px;
+    // --border-radius: 8px; // 12px
+    // --border-radius-medium: 8px; // 16px
+    // --border-radius-large: 8px; // 20px;
+    // --border-radius-huge: 8px; //36px;
+  }
+}
+
+@include sm {
+  :root {
+    // --header-size: 60px;
+    // --page-container-padding-top: calc(var(--header-size) + 24px);
+    // --footer-height: 339px;
+    // --case-battle-game-height: 404px;
+    // --case-battle-header-height: 73px;
+    // --sidebar-expanded-width: 230px;
+    // --sidebar-collapsed-width: 50px;
+    // --chat-width: 280px;
+    --content-padding: 12px;
+    // --border-radius-small: 8px; // 10px;
+    // --border-radius: 8px; // 12px
+    // --border-radius-medium: 8px; // 16px
+    // --border-radius-large: 8px; // 20px;
+    // --border-radius-huge: 8px; //36px;
+    --avatar-border-radius: 4px;
+  }
+}
+
+.v2Variables {
+  --grey-50: #f9fafb;
+  --grey-100: #f3f4f6;
+  --grey-200: #e6e8eb;
+  --grey-300: #d1d5db;
+  --grey-400: #a4a6af;
+  --grey-500: #767980;
+  --grey-600: #555a63;
+  --grey-700: #3d424d;
+  --grey-750: #242833;
+  --grey-800: #1a1d24;
+  --grey-850: #171a21;
+  --grey-900: #030814;
+  --grey-950: #030712;
+
+  --box-bg: var(--grey-850);
+
+  --Button-Green: #2bd13e;
+
+  --font-primary: "Nunito", sans-serif;
+  --font-family: "Nunito", sans-serif;
+
+  --table-section-background: var(--grey-850);
+  --table-heaer-background: var(--grey-750);
+  --table-row-hover-background: var(--grey-800);
+  --table-row-divider-color: var(--grey-750);
+  --unboxed-item-background: var(--grey-800);
+
+  --modal-border-radius: 16px;
+  --border-radius: 10px;
+  --unboxed-item-border-radius: 8px;
+  --bet-history-modal-radius: 20px;
+  --case-battles-list-item: 16px;
+  --case-battles-cases-radius: 12px;
+  --pressable-button-radius: 8px;
+
+  --modal-bg: var(--grey-900);
+
+  --case-details-modal-bg: var(--grey-850);
+  --single-case-open-wheel-item-bg: var(--grey-800);
+
+  font-family: var(--font-primary);
+}

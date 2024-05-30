@@ -1,0 +1,10 @@
+@import "@styles/mixins";
+
+.container {
+  container-type: inline-size;
+}
+
+.itemsGrid {
+  $sizes: 550;
+  @include grid(2, 12px, $sizes);
+}

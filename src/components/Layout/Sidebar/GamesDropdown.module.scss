@@ -1,0 +1,68 @@
+@import "@styles/mixins";
+
+.dropdown {
+  @include flexCenterBetween;
+  background-color: var(--grey-900);
+  border-radius: var(--border-radius);
+  padding: 6px;
+  height: 42px;
+  cursor: pointer;
+
+  &.onlyIcons {
+    border-radius: 0;
+    justify-content: center;
+  }
+
+  &:hover {
+    // color: #eee9ba;
+    text-shadow: 0px 0px 18px 0px rgba(90, 215, 148, 0.3);
+
+    // & > svg {
+    //   color: #eee9ba;
+    // }
+
+    .dropdownArrow {
+      color: var(--grey-400);
+    }
+  }
+
+  @include mobileHeaderBreakpoint {
+    display: none;
+  }
+}
+
+.root {
+  @include mobileHeaderBreakpoint {
+    display: none;
+  }
+}
+
+.dropdownSelected {
+  min-height: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dropdownArrow {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: #283242;
+  @include flexCenter;
+  color: var(--grey-400);
+
+  &.expanded {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.list {
+  gap: 2px;
+}

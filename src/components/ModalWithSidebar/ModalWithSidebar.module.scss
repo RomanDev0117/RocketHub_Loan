@@ -1,0 +1,112 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+$modal-sidebar-width: 400px;
+
+.modal {
+  width: 1440px;
+  height: 840px;
+  max-height: 90%;
+
+  --modal-padding-x: 0;
+  --modal-padding-top: 0;
+  --modal-padding-bottom: 0;
+
+  --modal-content-padding-x: 0;
+  --modal-content-padding-bottom: 0;
+
+  &.mobileSidebarTop {
+    @include md {
+      height: 100%;
+      width: 100%;
+      max-height: unset;
+      max-width: none !important;
+    }
+  }
+
+  @include sm {
+    width: 100% !important;
+  }
+}
+
+.modalContent {
+  display: flex;
+  padding-right: calc($modal-sidebar-width + 5px);
+  height: 100%;
+}
+
+.mainContent {
+  --padding: 36px;
+  padding-left: var(--padding);
+  padding-right: var(--padding);
+  padding-top: var(--padding);
+  min-height: 550px;
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &::-webkit-scrollbar-track {
+    margin-top: 106px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--grey-750);
+    width: 4px;
+  }
+}
+
+.sidebar {
+  width: $modal-sidebar-width;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: var(--add-case-modal-radius);
+  background: var(--grey-850);
+  align-self: stretch;
+  padding: 28px 28px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  overflow-y: auto;
+
+  // inputs
+  --input-bg: transparent;
+  --input-border: 1.5px solid var(--grey-750);
+}
+
+.mobileSidebarTop {
+  .modalContent {
+    @include md {
+      flex-direction: column;
+      padding: 1rem;
+      max-height: none;
+
+      .sidebar {
+        position: relative;
+        order: 1;
+        padding: 0;
+        background-color: transparent;
+        width: 100%;
+        overflow-y: unset;
+      }
+
+      .mainContent {
+        order: 2;
+        padding: 0;
+        margin-top: 20px;
+        min-height: 500px;
+
+        @include xs {
+          min-height: 90vh;
+          max-height: 90vh;
+        }
+      }
+    }
+  }
+}

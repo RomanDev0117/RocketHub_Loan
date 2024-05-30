@@ -1,0 +1,22 @@
+.modal {
+  z-index: calc(var(--zIndex-modal) + 1);
+  width: 640px;
+}
+
+.backdrop {
+  z-index: calc(var(--zIndex-modal) + 1);
+}
+
+.form {
+  gap: 44px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.coinIcon {
+  transform: translateY(-1px);
+}

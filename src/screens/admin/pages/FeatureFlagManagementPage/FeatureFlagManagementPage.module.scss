@@ -1,0 +1,29 @@
+.table {
+  width: 100%;
+}
+
+.container {
+  padding-top: 25px;
+  padding-bottom: 28px;
+
+  --input-bg: var(--grey-700);
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
+}

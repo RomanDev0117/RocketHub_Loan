@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #030814;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.title {
+  font-weight: 800;
+  letter-spacing: 0.13px;
+}
+
+.description {
+  font-weight: 600;
+  background: linear-gradient(180deg, #fff 0%, #e1d0cb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.timeAgo {
+  color: var(--grey-400);
+  font-style: normal;
+  font-weight: 600;
+}

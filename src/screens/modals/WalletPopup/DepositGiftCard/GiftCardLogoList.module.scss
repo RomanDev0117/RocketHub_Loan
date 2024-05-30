@@ -1,0 +1,15 @@
+.grid {
+  margin-bottom: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.andMore {
+  color: var(--grey-400);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 0 20px;
+}

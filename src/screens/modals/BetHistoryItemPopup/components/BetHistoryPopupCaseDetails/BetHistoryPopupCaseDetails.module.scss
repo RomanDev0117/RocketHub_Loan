@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.image {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  min-width: 92px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.26px;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 0.45px;
+}

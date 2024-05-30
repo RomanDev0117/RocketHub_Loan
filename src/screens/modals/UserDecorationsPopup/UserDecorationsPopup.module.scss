@@ -1,0 +1,4 @@
+.modal {
+  z-index: calc(var(--zIndex-modal) + 1);
+  width: 1000px;
+}

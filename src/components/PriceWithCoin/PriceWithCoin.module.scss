@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.39px;
+  white-space: nowrap;
+
+  &.negative {
+    color: #ff5252;
+
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.positive {
+    color: #5efc4f;
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  container-type: size;
+  height: var(--upgraderListHeight);
+  min-height: var(--upgraderListMinHeight);
+  width: 100%;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--grey-750);
+    width: 4px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  gap: 9px;
+
+  @container (max-width: 790px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @container (max-width: 620px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @container (max-width: 460px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  // @container (max-width: 520px) {
+  //   grid-template-columns: repeat(2, minmax(0, 1fr));
+  // }
+}

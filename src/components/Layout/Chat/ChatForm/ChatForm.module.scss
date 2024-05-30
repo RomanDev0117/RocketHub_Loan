@@ -1,0 +1,43 @@
+@import "@styles/mixins";
+
+.form {
+  flex: 1;
+}
+
+.inputRow {
+  @include flexCenterBetween;
+  gap: 6px;
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.input {
+  border-radius: 36px;
+  background: var(--grey-900);
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 36px;
+  padding: 0 18px;
+  padding-right: 40px;
+}
+
+.button {
+  height: 36px;
+  flex: 0 0 36px;
+  padding: 0;
+  @include flexCenter;
+}
+
+.counter {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  line-height: 16px;
+  letter-spacing: 0.39px;
+  color: var(--grey-400);
+}

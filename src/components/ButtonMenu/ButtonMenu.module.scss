@@ -1,0 +1,13 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (max-width: 840px) {
+    gap: 0.5rem !important;
+  }
+}
+
+.inline {
+  flex-direction: row;
+}

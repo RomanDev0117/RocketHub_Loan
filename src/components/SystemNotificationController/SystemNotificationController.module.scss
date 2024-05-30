@@ -1,0 +1,9 @@
+.container {
+  position: fixed;
+  z-index: var(--zIndex-system-notification);
+  left: 0;
+  right: 0;
+  top: var(--header-size);
+  display: flex;
+  flex-direction: column;
+}

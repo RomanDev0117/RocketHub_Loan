@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.15px;
+}
+
+.totalWin {
+  font-weight: 600;
+  line-height: 14px; /* 107.692% */
+  letter-spacing: 0.39px;
+}

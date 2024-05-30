@@ -1,0 +1,61 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  position: relative;
+  margin-right: 10px;
+
+  @media screen and (max-width: $mobileHeader) {
+    margin-right: 0;
+  }
+}
+
+.button {
+  @include button-reset;
+  color: #fff495;
+  height: 36px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+
+  &:hover {
+    color: #e5db88;
+  }
+
+  @include sm {
+    height: 100%;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  position: relative;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  @include sm {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.hasUnreadNotifications {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ff5b01;
+      top: 2px;
+      right: 2px;
+      border: 2px solid var(--grey-850);
+    }
+  }
+}

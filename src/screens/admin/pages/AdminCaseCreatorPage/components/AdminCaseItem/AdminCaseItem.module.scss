@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.image {
+  width: 80px;
+  flex: 0 0 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 24px;
+}
+
+.deleteButton {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding: 4px;
+  color: var(--grey-400);
+
+  &:hover {
+    color: var(--white);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,12 @@
+.avatar {
+  margin-left: -8px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 0;
+}

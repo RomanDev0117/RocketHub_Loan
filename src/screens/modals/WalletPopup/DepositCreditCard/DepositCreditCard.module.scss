@@ -1,0 +1,57 @@
+@import "@styles/mixins";
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.rowContainer {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 44px;
+  @include sm {
+    margin-top: 24px;
+  }
+}
+
+.submitButton {
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.emailInput {
+  min-width: 300px;
+}
+
+.policyCheckbox {
+  margin-top: 44px;
+  display: flex;
+
+  @include sm {
+    margin-top: 24px;
+  }
+}
+
+.coinIcon {
+  width: 55px;
+  height: auto;
+  transform: translateX(-7px) translateY(-9px);
+  pointer-events: none;
+}
+
+.verifyButton {
+  height: 52px;
+}
+
+.warningText {
+  font-size: 14px;
+  line-height: 30px;
+  color: rgb(180, 180, 180);
+}

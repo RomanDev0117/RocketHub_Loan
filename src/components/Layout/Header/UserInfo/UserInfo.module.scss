@@ -1,0 +1,91 @@
+@import "@styles/mixins";
+
+.rootContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @include mobileHeaderBreakpoint {
+    background-color: var(--grey-800);
+    border-radius: var(--border-radius);
+  }
+}
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include mobileHeaderBreakpoint {
+    justify-content: flex-start;
+    padding: 8px;
+    gap: 8px;
+    background-color: var(--grey-800);
+    border-radius: var(--border-radius);
+  }
+}
+
+.content {
+}
+
+.nameContainer {
+  @include mobileHeaderBreakpoint {
+    flex: 1;
+  }
+}
+
+.progress {
+  margin-top: 4px;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+
+.userName {
+  width: 102px;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.42px;
+  line-height: 1.42;
+  font-size: 14px;
+  font-family: var(--font-nunito);
+  font-weight: 700;
+}
+
+.lvl {
+  font-weight: 700;
+  letter-spacing: -0.13px;
+  color: var(--orange-700);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.lvlIcon {
+  color: #e5e7eb;
+}
+
+.rankIcon {
+  height: 34px;
+  width: 34px;
+  flex: 0 0 34px;
+  object-fit: contain;
+}
+
+.caretIcon {
+  color: var(--grey-400);
+
+  @include mobileHeaderBreakpoint {
+    margin-left: auto;
+  }
+}

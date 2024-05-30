@@ -1,0 +1,108 @@
+@import "@styles/mixins";
+
+.container {
+  --upgraderListHeight: 320px !important;
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+  min-height: 390px;
+  padding: 12px 12px 0;
+  position: relative;
+  transition: opacity 0.25s var(--easing);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loginLink {
+  color: var(--secondary-color);
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.offerTopBox {
+  display: flex;
+  padding: 0px 24px 0px 30px;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 660px){
+    padding: 0px;
+  }
+}
+.offerTitleBox {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  @media (max-width: 660px){
+    gap: 12px;
+  }
+}
+.offerTitle{
+  font-family: var(--font-poppins);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 0.72px;
+  color: #fff;
+  @media (max-width: 660px){
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+.offerIcon {
+  position: relative;
+}
+.offerCountBox {
+  position: absolute;
+  top: -11px;
+  right: -22px;
+  width: 40px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color:#FFE24B;
+  @media (max-width: 660px){
+    width: 30px;
+    height: 16px;
+  }
+}
+.offerCountText {
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 500;
+  color: #0E0E11;
+  @media (max-width: 660px){
+    font-size: 12px;
+  }
+}
+
+.offerTrashBox {
+   width: 56px;
+   height: 56px;
+   border-radius: 8px;
+   background-color: #1E1F27;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @media (max-width: 660px){
+    width: 24px;
+    height: 24px;
+    background: none;
+  }
+}

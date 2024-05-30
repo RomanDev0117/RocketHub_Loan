@@ -1,0 +1,27 @@
+@import "@styles/mixins";
+
+.pageContentContainer {
+  width: 100vw;
+  background-image: url(/images/loans/body_back.png);
+  background-color: #0E0E11;
+  overflow-y: auto;
+  padding-top: var(--page-container-padding-top);
+  flex-direction: column;
+  background-size: contain;
+  position: relative;
+  background-position-y: 60px;
+  background-repeat: no-repeat;
+}
+
+.main {
+  padding-bottom: 44px;
+  position: relative;
+  z-index: 2;
+  min-height: var(--main-content-height);
+}
+
+.bodyContainer {
+  background-size: 100% auto;
+  background-image: url(/images/loans/body_back.png);
+  background-color: #0E0E11;
+}

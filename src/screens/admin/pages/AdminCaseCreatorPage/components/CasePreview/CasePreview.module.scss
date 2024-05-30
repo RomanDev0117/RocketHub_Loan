@@ -1,0 +1,35 @@
+.container {
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+.caseContainer {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.fileDrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+
+  .container:hover & {
+    display: flex;
+  }
+}
+
+.error {
+  color: var(--error);
+  padding-left: 16px;
+  margin-top: 4px;
+  display: flex;
+}

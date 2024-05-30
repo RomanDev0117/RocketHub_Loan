@@ -1,0 +1,75 @@
+@import "@styles/mixins";
+
+.title1 {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 28px; /* 107.692% */
+  letter-spacing: -0.26px;
+
+  @include sm {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.title28 {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 28px; /* 107.692% */
+  letter-spacing: -0.26px;
+
+  @include sm {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.semiBoldText {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.39px;
+}
+
+.noDataMessage {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.label {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px; /* 106.667% */
+  letter-spacing: -0.15px;
+  margin-bottom: 12px;
+  display: inline-flex;
+
+  @include sm {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+}
+
+.title4 {
+  display: flex;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: 0.54px;
+  margin: 0;
+}
+
+.blockTitleSmall {
+  color: var(--grey-300);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.39px;
+}

@@ -1,0 +1,19 @@
+.title {
+  color: var(--grey-300);
+  margin-bottom: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  a {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

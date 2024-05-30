@@ -1,0 +1,21 @@
+.container {
+  border-radius: 4px;
+  background: #cd572c;
+  height: 16px;
+  padding: 0 4px;
+  width: 45px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1px;
+}
+
+.text {
+  font-weight: 600;
+  line-height: 1;
+  background: linear-gradient(180deg, #fff 0%, #e1d0cb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,15 @@
+@import "@styles/mixins";
+
+.container {
+  padding: 8px 19px 8px 28px;
+  display: flex;
+  gap: 16px;
+  border-radius: 17px;
+  background: var(--grey-800);
+  width: 100%;
+
+  @include sm {
+    padding: 1rem !important;
+    min-height: unset !important;
+  }
+}

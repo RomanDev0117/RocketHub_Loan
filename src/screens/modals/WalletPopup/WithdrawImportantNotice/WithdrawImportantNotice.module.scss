@@ -1,0 +1,44 @@
+.modal {
+  width: 536px;
+  background: var(--grey-850, #192432);
+  --modal-content-padding-x: 0;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 5px;
+
+  .couponImg {
+    margin-bottom: 28px;
+  }
+}
+
+.title {
+}
+
+.limitText {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px; /* 106.667% */
+  letter-spacing: -0.15px;
+}
+
+.greyText {
+  color: var(--grey-400, #9CA3AF);
+  text-align: center;
+  font-weight: 500;
+  line-height: 16px; /* 123.077% */
+  margin-bottom: 16px;
+}
+
+.button {
+  padding-left: 39px;
+  padding-right: 39px;
+  height: 36px;
+}
+
+.checkboxContainer {
+  display: flex;
+  justify-content:  center;
+}

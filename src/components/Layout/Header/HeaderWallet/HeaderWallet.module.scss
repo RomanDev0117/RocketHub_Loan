@@ -1,0 +1,51 @@
+@import "@styles/mixins";
+
+.walletContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  // position
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  @media screen and (max-width: 1200px) {
+    position: static;
+    transform: none;
+  }
+
+  @media screen and (max-width: $mobileHeader) {
+    height: 46px;
+    // padding: 4px 4px 6px 12px;
+    // background-color: var(--grey-900);
+    border-radius: var(--border-radius-medium);
+
+    background: #12121a;
+    padding: 4px 4px 6px 0;
+    gap: 4px;
+
+    // position: absolute;
+    // top: 50%;
+    // transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.walletButton {
+  --height: 36px;
+
+  @media screen and (max-width: $mobileHeader) {
+    padding: 4px;
+    width: 36px;
+
+    --height: 36px;
+  }
+}
+
+.balanceContainer {
+  display: flex;
+  position: relative;
+}

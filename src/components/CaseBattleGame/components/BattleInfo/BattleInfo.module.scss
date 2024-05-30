@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.39px;
+}
+
+.label {
+  letter-spacing: normal;
+  display: none;
+
+  height: 16px;
+  padding: 0 4px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+
+  &.cursed {
+    background-color: #ff7a7a;
+    display: flex;
+    color: #12121a;
+  }
+
+  &.group {
+    display: flex;
+
+    color: #12121a;
+    background: #ffaf83;
+  }
+}
+
+.battleType {
+  // color: var(--grey-400);
+  color: #afa8a6;
+  font-weight: 800;
+}

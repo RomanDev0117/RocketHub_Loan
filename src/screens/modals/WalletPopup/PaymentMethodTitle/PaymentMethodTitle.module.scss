@@ -1,0 +1,21 @@
+.title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+  min-height: 24px;
+
+  color: var(--grey-300);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.badge {
+  font-size: 13px;
+}
+
+.text {
+  transform: translateY(2px);
+}

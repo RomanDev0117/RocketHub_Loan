@@ -1,0 +1,49 @@
+@import "@styles/mixins";
+
+.root {
+  margin-bottom: 23px;
+  padding-bottom: 8px;
+  display: flex;
+  gap: 12px;
+
+  @include sm {
+    // margin-left: -1rem;
+    // margin-right: -1rem;
+    // padding-left: 8px;
+    // padding-right: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: unset;
+    width: auto;
+    // border-bottom: 1px solid #283242;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    display: none;
+  }
+
+  // &::-webkit-scrollbar-track {
+  //   background: transparent;
+  //   width: 3px;
+  //   border-radius: 8px;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   // background: #bebdbd;
+  //   // background: red;
+  //   // background: rgba(217, 217, 217, 0.7);
+  //   // background: var(--grey-800);
+  //   background-color: transparent;
+  //   // background-color: red;
+  //   border-radius: 12px;
+  //   width: 5px;
+  // }
+}
+
+.container {
+  @include sm {
+    // border-bottom: none !important;
+    width: auto;
+  }
+}

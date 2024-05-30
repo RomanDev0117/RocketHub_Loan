@@ -1,0 +1,55 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  border-bottom: 1px solid #283242;
+  width: 100%;
+  gap: 36px;
+
+  @include xs {
+    gap: 17px;
+  }
+}
+
+.item {
+  @include button-reset;
+  height: 40px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.45px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  position: relative;
+
+  @include xs {
+    font-size: 13px;
+    letter-spacing: 0.25px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    border-radius: 5px;
+    background: #ff4000;
+    box-shadow: 0px 0px 20px 0px rgba(207, 16, 16, 0.65);
+    height: 2px;
+    transform: translateY(0.5px) translateX(-50%);
+    width: 0;
+    transition: all 0.2s cubic-bezier(0.22, 0.68, 0, 1.71);
+  }
+
+  &:hover,
+  &.itemActive {
+    opacity: 1;
+
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+.itemActive {
+}

@@ -1,0 +1,94 @@
+@import "@styles/mixins";
+
+.container {
+  // --dropdown-bg: #090c14; //var(--grey-750);
+  // --input-bg: #090c14; // var(--grey-750);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+
+  @include xs {
+    gap: 0.5rem;
+  }
+  container-type: inline-size;
+}
+
+// .left,
+// .right {
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+
+//   @container (max-width: 860px) {
+//     flex-direction: column;
+//   }
+// }
+
+// .right {
+//   @container (max-width: 420px) {
+//     max-width: 190px;
+//   }
+// }
+
+.gameTypeDropdown {
+  order: 1;
+}
+
+.priceDropdown {
+  order: 2;
+  @container (max-width: 700px) {
+    order: 4;
+  }
+
+  @container (max-width: 500px) {
+    min-width: 100%;
+  }
+}
+
+.orderByDropdown {
+  order: 3;
+}
+
+.dropdown {
+  width: auto;
+
+  @container (max-width: 800px) {
+    flex: 1;
+  }
+
+  @container (max-width: 700px) {
+    width: 50%;
+  }
+}
+
+.dropdownPlaceholder {
+  min-width: 150px;
+
+  @include xs {
+    min-width: 80px;
+  }
+}
+
+.searchField {
+  flex: 0 0 220px;
+  margin-left: auto;
+  order: 4;
+
+  @container (max-width: 800px) {
+    flex: auto;
+    width: 100%;
+  }
+
+  @container (max-width: 700px) {
+    width: 50%;
+    order: 2;
+  }
+
+  @container (max-width: 420px) {
+    width: 40%;
+  }
+}

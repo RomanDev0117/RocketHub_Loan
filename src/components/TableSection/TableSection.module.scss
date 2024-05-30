@@ -1,0 +1,48 @@
+@import "@styles/mixins";
+
+.noData {
+  padding: 16px 35px;
+}
+
+.table {
+  min-height: 200px;
+}
+
+.tableContainer {
+  border-radius: var(--border-radius-medium);
+  background: var(--table-section-background, var(--grey-800));
+  // overflow: hidden;
+  flex: 1;
+}
+
+.tableHeader {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--table-section-header-padding, 28px 28px 20px);
+
+  @include sm {
+    padding: var(--table-section-header-padding, 16px 16px 12px);
+  }
+
+  .title {
+    font-family: var(--font-nunito);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 20px;
+    letter-spacing: 0.54px;
+  }
+
+  .headerTimeNotice {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.5);
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

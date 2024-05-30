@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconContainer {
+  display: flex;
+}

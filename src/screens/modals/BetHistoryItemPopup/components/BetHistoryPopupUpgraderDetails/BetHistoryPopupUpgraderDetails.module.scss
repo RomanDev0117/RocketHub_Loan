@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.iconContainer {
+  width: 60px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  font-size: 48px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.26px;
+}
+
+.text {
+  color: var(--grey-300);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.13px;
+}

@@ -1,0 +1,21 @@
+export type TSteamItem = {
+  addedPricePercentage: number;
+  amount: number;
+  appId: string;
+  assetId: string;
+  classId: string;
+  color: string;
+  id: string;
+  image: string;
+  instanceId: string;
+  isForSale: boolean;
+  name: string;
+  nametag: string;
+  owner: string;
+  salePrice: number;
+  stickers: string[];
+  tradableAfter: number;
+  price: number;
+  fee: number;
+  available: boolean;
+};

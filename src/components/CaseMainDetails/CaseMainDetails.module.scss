@@ -1,0 +1,39 @@
+@import "@styles/mixins";
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-right: auto;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.caseImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+
+  @include sm {
+    width: 80px !important;
+    height: 80px !important;
+  }
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  text-transform: capitalize;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+
+  @include sm {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

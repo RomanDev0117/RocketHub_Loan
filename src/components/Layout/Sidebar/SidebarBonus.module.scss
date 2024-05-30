@@ -1,0 +1,76 @@
+@import "@styles/mixins";
+
+.root {
+  position: relative;
+
+  @include mobileHeaderBreakpoint {
+    display: none;
+  }
+}
+
+.bonusFull {
+  width: 100%;
+  border-radius: var(--border-radius);
+  background: url("../../../assets/images/bonus.png") no-repeat center center;
+  padding: 12px;
+  height: 88px;
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.32px;
+  cursor: pointer;
+  transition: var(--transition);
+  transform: scale(1) rotateY(0deg);
+
+  &:hover {
+    background-size: 110% 110%;
+  }
+
+  &:not(.visible) {
+    transform: scale(0.5) rotateY(90deg);
+  }
+}
+
+.button {
+  @include button-reset;
+  @include flexCenter;
+  border-radius: 200px;
+  background: #fdd134;
+  height: 28px;
+  padding: 0 10px;
+  color: var(--grey-900);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.39px;
+  margin-top: 6px;
+
+  &:hover {
+    background: var(--secondary-color);
+  }
+}
+
+.collapsedButton {
+  @include button-reset;
+  background-color: transparent;
+  transition: var(--transition);
+  transform: scale(0);
+  height: 42px;
+  width: 100%;
+
+  &:hover {
+    background-color: var(--grey-900);
+    color: var(--white);
+  }
+
+  &.visible {
+    transform: scale(1);
+  }
+}

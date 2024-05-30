@@ -1,0 +1,19 @@
+.copyIcon {
+  color: #9ca3af;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--white-color);
+  }
+}
+.copyIconGreen {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1);
+  transition: var(--transition);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}

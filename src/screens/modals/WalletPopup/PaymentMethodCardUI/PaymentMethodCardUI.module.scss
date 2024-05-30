@@ -1,0 +1,135 @@
+@import "@styles/mixins";
+
+.root {
+  display: flex;
+  width: 120px;
+  position: relative;
+  cursor: pointer;
+
+  @include sm {
+    width: 100%;
+  }
+}
+
+.container {
+  width: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  padding-bottom: 12px;
+  border-radius: 10px;
+
+  transition: var(--transition-medium);
+
+  @include sm {
+    width: 100%;
+  }
+
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &::before {
+    content: "";
+    border-radius: 10px;
+    background: var(--grey-750);
+    height: 104px;
+    width: 200%;
+    border-radius: 50%;
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: var(--transition-medium);
+    z-index: -1;
+  }
+}
+
+.imageContainer {
+  border-radius: 10px;
+  background: var(--grey-750);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+
+  &.rotate {
+    img:not(.glow) {
+      transform: scale(1) rotateY(0deg);
+
+      .container:hover & {
+        animation: rotateCoin 1.4s linear 0s infinite;
+      }
+    }
+  }
+
+  img:not(.glow) {
+    object-fit: contain;
+  }
+}
+
+.innerImageContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: var(--transition-medium);
+
+  .container:hover & {
+    transform: scale(var(--payment-image-scale, 1.5))
+      translateY(var(--payment-image-traslateY, 10px));
+  }
+}
+
+@keyframes rotateCoin {
+  0% {
+    transform: scale(1) rotateY(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotateY(180deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
+  }
+}
+
+.title {
+  color: var(--grey-300);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: var(--transition-medium);
+  opacity: 1;
+
+  .container:hover & {
+    color: #fff;
+    transform: translateY(3px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.glow {
+  position: absolute;
+  height: 52px;
+  width: 100%;
+  bottom: 0;
+  transition: var(--transition-medium);
+  object-fit: cover;
+  z-index: 1;
+
+  .container:hover & {
+    height: 90px;
+    transform: translateY(38px);
+  }
+}

@@ -1,0 +1,30 @@
+@import "@styles/mixins";
+
+.form {
+  width: 100%;
+}
+
+.input {
+  padding-right: 57px !important;
+}
+
+.lockContainer {
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  margin-right: auto;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.timeText {
+  text-transform: uppercase;
+  color: var(--grey-300);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.39px;
+}

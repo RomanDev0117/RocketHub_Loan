@@ -1,0 +1,47 @@
+.badge {
+  position: absolute;
+  z-index: 20;
+  width: 38px;
+  height: 39.5px;
+  top: -8px;
+  right: 0;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: auto;
+  }
+}
+
+.tooltipTextContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2px;
+}
+
+.text1,
+.text2,
+.text3 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #a3a9b9;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.text2 {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.text3 {
+  font-weight: 200;
+  font-style: italic;
+}

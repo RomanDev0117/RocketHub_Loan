@@ -1,0 +1,83 @@
+@import "@styles/mixins";
+
+.chat {
+  --chat-bg: var(--grey-850);
+
+  position: fixed;
+  width: var(--chat-width);
+  right: 0;
+  top: calc(var(--header-size) - 1px);
+  bottom: 0;
+  background-color: var(--chat-bg);
+  padding: 10px;
+  z-index: var(--zIndex-sidebar);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 0 14px 0;
+  transition: var(--transition);
+  transform: translateX(100%);
+  overflow-x: hidden;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  * {
+    overflow-anchor: none;
+  }
+
+  .chatList > div:last-child {
+    overflow-anchor: auto;
+  }
+
+  @media screen and (max-width: $noChat) {
+    // top: auto;
+    // bottom: 0;
+    // height: 450px;
+    // max-height: 40vh;
+    // border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  @media screen and (max-width: $mobileHeader) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--zIndex-mobile-chat);
+    padding: 0 12px 0;
+  }
+}
+
+.chatList {
+  @include flexColumn;
+  gap: 4px;
+  margin: 0 0 12px;
+}
+
+.chatOpenButton {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  transform: translateX(0);
+  transition: var(--transition);
+  z-index: var(--zIndex-chat-button);
+  width: 40px;
+
+  &.chatOpened {
+    transform: translateX(calc(-1 * var(--chat-width)));
+  }
+}
+
+.chatWithMessages {
+  margin-bottom: 0;
+}
+
+.rainContainer {
+  position: sticky;
+  top: 60px;
+  z-index: var(--zIndex-rain);
+}

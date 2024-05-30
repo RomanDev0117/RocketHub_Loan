@@ -1,0 +1,22 @@
+@import "@styles/mixins";
+
+.title {
+  @include flexCenterBetween;
+  line-height: 16px;
+  letter-spacing: 0.39px;
+  padding: 0 11px;
+}
+
+.titleText {
+  color: #707286;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.helperText {
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  font-size: 12px;
+}

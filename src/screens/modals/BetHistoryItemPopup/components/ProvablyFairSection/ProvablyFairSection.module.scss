@@ -1,0 +1,42 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include sm {
+    gap: 16px;
+  }
+}
+
+.twoFields {
+  display: flex;
+  gap: 16px;
+
+  @include sm {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  & > div {
+    flex: 1;
+
+    @include sm {
+      flex: unset;
+    }
+
+    &:last-child {
+      flex: 0 0 148px;
+
+      @include sm {
+        flex: unset;
+      }
+    }
+  }
+}
+
+.input {
+  padding-left: 20px;
+  padding-right: 50px;
+}

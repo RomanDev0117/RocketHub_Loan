@@ -1,0 +1,220 @@
+@import "@styles/mixins";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 24px;
+
+  // border-radius: 16px;
+  // border: 1px solid rgba(255, 255, 255, 0.04);
+  // background: var(--grey-800);
+  // box-shadow: 0px 0px 20px 0px rgba(110, 121, 135, 0.23);
+  padding: 8px 30px 8px 28px;
+  min-height: 110px;
+  position: relative;
+
+  // border: 1px solid rgba(255, 255, 255, 0.12);
+  // box-shadow: 0px 0px 24px 0px rgba(39, 7, 131, 0.2);
+  // background: var(--grey-800);
+  border-radius: var(--case-battles-list-item);
+
+  border-radius: 16px;
+  background: var(--grey-850);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15),
+    0px 14px 14px 0px rgba(0, 0, 0, 0.13), 0px 32px 19px 0px rgba(0, 0, 0, 0.08),
+    0px 57px 23px 0px rgba(0, 0, 0, 0.02), 0px 89px 25px 0px rgba(0, 0, 0, 0);
+
+  @media screen and (max-width: 870px) {
+    flex-wrap: wrap;
+    padding: 4px;
+    gap: 8px;
+  }
+}
+
+.col1 {
+  // flex: 0 0 35%;
+  flex-basis: 25%;
+  min-width: 25%;
+  // flex: 1;
+  overflow: hidden;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 2px; // padding bottom because avatar has shadows
+
+  @media screen and (max-width: 1000px) {
+    flex: 1;
+  }
+
+  @media screen and (max-width: 870px) {
+    width: 100%;
+    flex: 1;
+    order: 2;
+    padding: 4px 8px 6px;
+    flex: 2;
+  }
+
+  @include sm {
+    min-width: 0;
+  }
+
+  &:after {
+    content: "";
+    right: 0px;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    width: 30%;
+    opacity: 1;
+    background: linear-gradient(270deg, var(--grey-850) 0%, transparent);
+    transition: opacity 0.5s ease 0s;
+    pointer-events: none;
+  }
+}
+
+.col2 {
+  // flex: 0 0 35%;
+  width: 50%;
+  position: relative;
+  flex: 1 1 0%;
+  min-width: 0;
+  // width: 100%;
+  // width: 50%;
+  // min-width: 0;
+
+  border-radius: var(--case-battles-cases-radius);
+  background: var(--grey-900);
+  box-shadow: -1px -1px 20px 0px rgba(0, 0, 0, 0.12) inset;
+  padding: 8px;
+
+  @media screen and (max-width: 1000px) {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media screen and (max-width: 870px) {
+    min-width: 100%;
+    flex: 1;
+    order: 1;
+  }
+
+  // &:after {
+  //   content: "";
+  //   right: 0px;
+  //   top: 0;
+  //   height: 100%;
+  //   position: absolute;
+  //   width: 30%;
+  //   opacity: 1;
+  //   background: linear-gradient(270deg, var(--grey-800) 0%, transparent);
+  //   transition: opacity 0.5s ease 0s;
+  //   pointer-events: none;
+  // }
+}
+
+.col3 {
+  // flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 190px;
+  order: 3;
+
+  @media screen and (max-width: 870px) {
+    padding: 4px 8px;
+    height: 40px;
+    flex: 1;
+  }
+}
+
+.button {
+  min-width: 157px;
+  margin-left: 20px;
+  --height: 44px;
+
+  @include sm {
+    min-width: 100px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-left: 0;
+    --height: 40px;
+  }
+}
+
+.joinLoungeButton {
+  margin-right: -12px;
+  margin-left: 20px;
+  transform: translateY(-2px);
+  --height: 42px;
+
+  @include sm {
+    --height: 38px;
+    margin-left: 10px;
+    margin-right: 8px;
+  }
+}
+
+.rounds {
+  white-space: nowrap;
+  color: var(--grey-200);
+
+  @media screen and (max-width: 870px) {
+    display: none;
+  }
+}
+
+.roundCounter {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.roundsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.winnersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 157px;
+  margin-left: 20px;
+  gap: 8px;
+  align-items: center;
+
+  @media screen and (max-width: 870px) {
+    min-width: unset;
+    margin-left: 0;
+    flex-direction: row;
+  }
+}
+
+.winnersText {
+  color: var(--grey-300);
+  font-weight: 500;
+}
+
+.totalWin {
+  white-space: nowrap;
+
+  @media screen and (max-width: 870px) {
+    position: absolute;
+    top: 64px;
+    right: 10px;
+    border-radius: var(--border-radius);
+    padding: 4px 6px;
+    background-color: var(--grey-750);
+    z-index: 5;
+  }
+}

@@ -1,0 +1,21 @@
+@import "@styles/mixins";
+
+.title {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 40px;
+  margin-bottom: 20px;
+  margin-top: 52px;
+  font-family: var(--font-nunito);
+
+  @include rewardsMobileBreakpoint {
+    font-family: var(--font-poppins);
+    margin-top: 32px;
+    margin-bottom: 28px;
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}

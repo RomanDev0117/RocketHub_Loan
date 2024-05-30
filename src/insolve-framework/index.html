@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rockethub</title>
+
+    <script type="text/javascript" src="./api/getUserData.js"></script>
+    <script type="text/javascript" src="./api/updateRank.js"></script>
+
+    <script type="text/javascript">
+      (async () => {
+        let user = await getUserData();
+
+        document.write(`hello ${user.name} (${user.steamid})`);
+
+        let rank = await updateRank(user.steamid, 2);
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="http://localhost:3001/auth/steam">Sign in</a>
+    <a href="http://localhost:3001/auth/steam/signout">Sign out</a>
+  </body>
+</html>

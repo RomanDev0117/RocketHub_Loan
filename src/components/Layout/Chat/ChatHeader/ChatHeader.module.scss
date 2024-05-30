@@ -1,0 +1,54 @@
+@import "@styles/mixins";
+
+.chatHeader {
+  min-height: 60px;
+  background: var(--grey-850);
+  position: sticky;
+  top: 0;
+  padding: 12px 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: auto;
+
+  @media screen and (max-width: $mobileHeader) {
+    border-bottom: 1px solid var(--grey-750, #283242);
+    margin-left: -12px;
+    margin-right: -12px;
+    padding: 12px;
+  }
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.15px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.button {
+  height: 36px;
+}
+
+.closeButton {
+  padding: 6px;
+  height: 36px;
+  width: 36px;
+
+  @media screen and (max-width: $mobileHeader) {
+    svg {
+      width: 14px;
+      height: auto;
+    }
+  }
+}

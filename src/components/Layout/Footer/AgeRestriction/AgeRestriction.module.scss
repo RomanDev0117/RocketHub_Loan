@@ -1,0 +1,23 @@
+.ageRestriction {
+  display: flex;
+  gap: 6px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.39px;
+
+  @container (max-width: 480px) {
+    width: 100%;
+  }
+
+  svg {
+    margin-top: -4px;
+  }
+
+  .text {
+    color: var(--grey-300);
+  }
+
+  .secondText {
+    color: var(--grey-500);
+  }
+}

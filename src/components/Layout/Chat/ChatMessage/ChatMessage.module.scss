@@ -1,0 +1,160 @@
+@import "@styles/mixins";
+
+.message {
+  font-size: 13px;
+  letter-spacing: 0.39px;
+  display: flex;
+  align-items: center;
+  padding: 10px 6px;
+  gap: 8px;
+  font-family: var(--font-nunito);
+  // background-color: var(--grey-750);
+  // border-radius: 16px;
+
+  &.systemMessage {
+    background-color: transparent;
+    text-align: center;
+    padding: 10px 0;
+    text-align: center;
+    border: 1px solid red;
+    margin: 4px 0;
+    font-size: 14px;
+    border-radius: 8px;
+
+    .content {
+      width: 100%;
+    }
+  }
+}
+
+.avatar {
+  align-self: flex-start;
+}
+
+.content {
+  padding-top: 5px;
+  width: calc(100% - 36px - 10px);
+  word-wrap: break-word;
+}
+
+.header {
+  display: block;
+  // margin-bottom: 4px;
+  gap: 8px;
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  position: relative;
+
+  .senderText {
+    text-indent: 14px;
+  }
+}
+
+.title {
+  color: var(--grey-400);
+  font-weight: 800;
+  letter-spacing: 0.39px;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.date {
+  color: var(--grey-700);
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.text {
+  display: block;
+  text-indent: 0;
+  font-weight: 600;
+
+  &:not(.tipText) {
+    background: var(
+      --fade-white,
+      linear-gradient(180deg, #fff 0%, #cbd5e1 100%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  position: absolute;
+}
+
+.smallEmoji {
+  width: 25px;
+  height: auto;
+  max-height: 25px;
+  margin: 0 4px;
+  transform: translateY(5px);
+}
+
+.bigEmoji {
+  max-height: 60px;
+  padding-top: 6px;
+  max-width: 100%;
+}
+
+.coinContainer {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 4px;
+  margin-right: 4px;
+
+  color: #ffe24b;
+  text-shadow: 0px 4px 8px rgba(255, 183, 75, 0.25);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.userTag {
+  padding: 2px 3px;
+  border-radius: 3px;
+  display: inline-flex;
+  margin-right: 7px;
+
+  text-transform: uppercase;
+  color: var(--grey-850);
+  font-family: var(--font-poppins);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.33px;
+  text-indent: 0;
+  line-height: 10px;
+
+  &.adminTag {
+    background: #ff3a3a;
+  }
+
+  &.moderatorTag {
+    background-color: #03a9f4;
+  }
+}
+
+.caseBattleLink {
+  color: var(--Button-Green, #2bd13e);
+  -webkit-text-fill-color: var(--Button-Green, #2bd13e);
+  font-family: var(--font-nunito);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+
+  .caseBattleImage {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+}

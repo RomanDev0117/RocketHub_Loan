@@ -1,0 +1,164 @@
+@import "reset-css";
+
+a {
+  color: #fff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #fff;
+}
+
+*:not(svg, path) {
+  // transition: all 0.15s ease-in;
+}
+
+* {
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    // background: var(--secondary-color);
+    border-radius: 5px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    width: 3px;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    // background: #bebdbd;
+    // background: red;
+    // background: rgba(217, 217, 217, 0.7);
+    background: var(--grey-800);
+    border-radius: 12px;
+    width: 5px;
+  }
+}
+
+html {
+  background: #111827 !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  letter-spacing: -0.15px;
+  background-color: var(--grey-900);
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 500;
+}
+
+input {
+  font-family: var(--font-primary);
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: 0.39px;
+  font-size: 13px;
+}
+
+input::placeholder {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: 0.39px;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  // border: 1px solid transparent;
+  // padding: 0.6em 1.2em;
+  // font-size: 1em;
+  // font-weight: 500;
+  // font-family: inherit;
+  // background-color: #1a1a1a;
+  // cursor: pointer;
+  // transition: border-color 0.25s;
+}
+button:hover {
+  // border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #fff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.intercom-lightweight-app-launcher {
+  left: 20px;
+}
+
+.intercom-dfosxs {
+  left: 20px;
+}
+
+iframe[name='intercom-notifications-frame'] {
+  left: 20px;
+}
+
+.intercom-namespace .intercom-o8wqhy {
+  left: 20px;
+}
+
+.intercom-namespace .intercom-dfosxs {
+  left: 20px;
+}
+
+.intercom-namespace .intercom-1ojvo21 {
+  left: 20px;
+}
+
+.intercom-lightweight-app-style {
+  left: 20px;
+}
+
+.intercom-lightweight-app-messenger {
+  left: 20px;
+}
+
+.intercom-lightweight-app-gradient {
+  left: 20px;
+}

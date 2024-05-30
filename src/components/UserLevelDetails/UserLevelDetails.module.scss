@@ -1,0 +1,150 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+
+  gap: 18px;
+}
+
+.flat {
+  .rankInfo {
+    color: var(--white);
+  }
+
+  .totalRewarded {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .rankImg {
+    // max-height: 129px;
+    height: 129px;
+    width: 90px;
+
+    @include sm {
+      width: 60px;
+      height: auto;
+      align-self: flex-start;
+    }
+  }
+}
+
+.minimal {
+  gap: 16px;
+  font-family: var(--font-nunito);
+
+  .rankImg {
+    height: 88px;
+    width: 80px;
+    min-width: 80px;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: var(--font-nunito);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 30px;
+    letter-spacing: -0.28px;
+    text-transform: uppercase;
+
+    @include rewardsMobileBreakpoint {
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 700;
+      font-family: var(--font-poppins);
+      letter-spacing: 0.55px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .rankInfo {
+    letter-spacing: 0.13px;
+    color: var(--grey-300);
+  }
+
+  .totalEarned {
+    color: var(--white);
+  }
+
+  .progress {
+    margin-bottom: 8px;
+  }
+}
+
+.rankImg {
+  // max-height: 151px;
+  // width: 106px;
+  height: 100px;
+  width: auto;
+
+  object-fit: contain;
+}
+
+.nextRankImg {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -0.34px;
+  margin-bottom: 12px;
+
+  @include sm {
+    font-size: 24px;
+  }
+}
+
+.progress {
+  width: 100%;
+  margin-bottom: 4px;
+
+  @include sm {
+    max-width: 100%;
+  }
+}
+
+.rankInfo {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  line-height: 16px;
+  letter-spacing: 0.39px;
+  color: var(--grey-400);
+
+  img {
+    height: 28px;
+  }
+}
+
+.nextRank {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nextText {
+  color: var(--grey-400);
+}
+
+.totalRewarded {
+  margin-top: 12px;
+  color: var(--grey-400);
+  line-height: 16px;
+  letter-spacing: 0.39px;
+  padding: 10px 16px;
+  background: var(--grey-750, #283242);
+  border-radius: var(--border-radius-huge);
+  display: inline-flex;
+
+  strong {
+    color: #20d172;
+    margin-left: 5px;
+  }
+}

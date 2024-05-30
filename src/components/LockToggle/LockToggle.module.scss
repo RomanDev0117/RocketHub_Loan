@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon {
+  color: #9ca3af;
+  transition: var(--transition);
+
+  &.red {
+    color: #ff521c;
+  }
+
+  &.disabled {
+    color: #4b5563;
+  }
+
+  &.green {
+    color: #2bd13e;
+  }
+}

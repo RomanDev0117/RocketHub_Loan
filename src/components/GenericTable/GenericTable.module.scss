@@ -1,0 +1,48 @@
+.noDataContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root {
+  position: relative;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: -20px;
+  margin-top: 0;
+  transform: translateY(100%);
+
+  &.smallDevicePagination {
+    position: static;
+    margin-top: 20px;
+    bottom: 0;
+    transform: unset;
+    padding-bottom: 1rem;
+  }
+}
+
+.tableNoData {
+  table {
+    min-height: 140px;
+  }
+}
+
+.tableLoadingNoData {
+  table {
+    min-height: 140px;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+}

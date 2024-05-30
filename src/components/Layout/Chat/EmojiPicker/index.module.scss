@@ -1,0 +1,54 @@
+@import "../../../../assets/styles/_mixins.scss";
+
+.emojiPopup {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  padding: 16px 14px 8px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  background-color: var(--grey-850);
+}
+
+.emoji {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.emojiPicker {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.opener {
+  @include button-reset;
+  position: absolute;
+  width: 30px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2e394e;
+    border-radius: 50%;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}

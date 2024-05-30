@@ -1,0 +1,83 @@
+@import "@styles/mixins";
+
+.container {
+  margin-bottom: 44px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  gap: 10px;
+
+  @media screen and (max-width: 620px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.button {
+  @include button-reset;
+  @include flexCenter;
+  border-radius: var(--border-radius);
+  background: var(--grey-850);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  gap: 8px;
+  aspect-ratio: 1.8;
+  width: 100%;
+  transform: scale(1);
+  transition: var(--transition);
+
+  svg {
+    width: 42px;
+    height: auto;
+    transform: translateY(-2px) translateY(-2px);
+  }
+
+  &:hover,
+  &.selected {
+    background-color: var(--grey-750);
+    transform: scale(1.04);
+  }
+
+  .coin {
+    transition: var(--transition);
+  }
+
+  &.selected {
+    .coin {
+      transform: scale(1.2);
+    }
+  }
+
+  span,
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+  span {
+    display: flex;
+  }
+}
+
+.glow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+
+  @include walletFullScreenBreakpoint {
+    display: none;
+  }
+}

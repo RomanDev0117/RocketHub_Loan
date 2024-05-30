@@ -1,0 +1,14 @@
+@import "@styles/mixins";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 120px);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+
+  @include sm {
+    grid-row-gap: 5px;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

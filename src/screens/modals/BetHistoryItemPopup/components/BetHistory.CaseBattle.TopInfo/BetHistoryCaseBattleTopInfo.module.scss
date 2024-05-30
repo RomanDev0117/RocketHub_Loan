@@ -1,0 +1,51 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include sm {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.image {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  min-width: 92px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 28px;
+  letter-spacing: 0.26px;
+}
+
+.winnersContainer {
+  text-align: center;
+}
+
+.winners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.winnersTitle {
+  color: var(--grey-300);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+}

@@ -1,0 +1,19 @@
+@import "@styles/mixins";
+
+.container {
+  width: 100%;
+  container-type: inline-size;
+}
+
+.grid {
+  $sizes: 1100, 940, 800, 630, 480;
+  @include grid(7, 12px, $sizes);
+
+  @include sm {
+    gap: 8px;
+  }
+
+  .gridItem {
+    width: 100%;
+  }
+}

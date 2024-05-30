@@ -1,0 +1,9 @@
+@import "@styles/mixins";
+
+.content {
+  width: 100%;
+  padding: 30px;
+  @media (max-width:660px){
+    padding: 12px
+  } 
+}

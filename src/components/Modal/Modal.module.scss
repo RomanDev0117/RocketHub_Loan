@@ -1,0 +1,97 @@
+@import "@styles/mixins";
+
+.modal {
+  --modal-padding-x: 15px;
+  --modal-padding-top: 40px;
+  --modal-padding-bottom: 0;
+
+  --modal-content-padding-x: 45px;
+  --modal-content-padding-bottom: 40px;
+
+  position: fixed;
+  width: 400px;
+  z-index: var(--zIndex-modal);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: var(--modal-padding-top) var(--modal-padding-x)
+    var(--modal-padding-bottom);
+  outline: none;
+
+  border-radius: var(--modal-border-radius);
+  background: var(--modal-bg);
+
+  max-width: calc(100vw - 2rem);
+
+  // filter: drop-shadow(0px 0px 10px #3f3f3f);
+  filter: drop-shadow(0px 0px 10px #222222);
+
+  @include md {
+    max-width: calc(100vw - 2rem) !important;
+  }
+
+  @include xs {
+    --modal-padding-x: 0;
+    --modal-content-padding-x: 1rem;
+    width: calc(100vw - 2rem) !important;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  z-index: var(--zIndex-modal);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
+  // background: rgba(255, 255, 255, 0.5); // TODO: remove after testing
+  transform: translateY(0px) translateX(0px) !important; // disable animation
+}
+
+.closeButton {
+  @include button-reset;
+  padding: 8px;
+  position: absolute;
+  z-index: 50;
+  color: var(--grey-200);
+  transition: var(--transition);
+
+  top: 9px;
+  right: 11px;
+
+  &:hover {
+    color: var(--white);
+    transform: scale(1.1);
+  }
+
+  &.smSticky {
+    @include sm {
+      position: fixed;
+    }
+  }
+
+  @include xs {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.content {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0 var(--modal-content-padding-x) var(--modal-content-padding-bottom);
+}
+
+.footer {
+  display: flex;
+  padding: 21px 60px 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  border-radius: 0 0 var(--modal-border-radius) var(--modal-border-radius);
+  background-color: var(--modal-footer-bg);
+  gap: 16px;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-600);
+}

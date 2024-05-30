@@ -1,0 +1,140 @@
+@import "@styles/mixins";
+
+.container {
+  --input-bg: var(--grey-850);
+  --dropdown-bg: var(--grey-850);
+  // --dropdown-list-bg: var(--grey-850);
+  --input-border: none;
+  // --input-border-radius: 14px;
+}
+
+.itemsContainer {
+  min-height: 50vh;
+  position: relative;
+}
+
+// .itemsGrid {
+//   display: grid;
+//   grid-template-columns: repeat(4, minmax(0, 1fr));
+//   grid-column-gap: 20px;
+//   grid-row-gap: 20px;
+
+//   max-height: 50vh;
+//   overflow-y: auto;
+
+// }
+
+.itemsVirtualGrid {
+  height: 700px !important;
+  width: 100%;
+  margin-top: 14px;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--grey-750);
+    width: 4px;
+  }
+
+  @include walletFullScreenBreakpoint {
+    height: calc(100vh - 330px) !important;
+  }
+}
+
+.contentContainer {
+  padding: 40px 36px 0 40px;
+  flex: 1;
+  container-type: inline-size;
+
+  @media screen and (max-width: 1023px) {
+    padding: 20px 20px 0 20px;
+  }
+
+  @include xs {
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+}
+
+.error {
+  font-size: 18px;
+  text-align: center;
+
+  transform: translateX(-50%) translateY(calc(-50% - 50px));
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+.dropdown {
+  min-width: 238px;
+
+  @container (max-width: 476px) {
+    min-width: unset;
+  }
+}
+
+.dropdownsContainer {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+
+  @container (max-width: 830px) {
+    flex-direction: column;
+  }
+
+  @container (max-width: 476px) {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+
+  @container (max-width: 830px) {
+    align-items: flex-start;
+  }
+
+  @container (max-width: 476px) {
+    flex-direction: column;
+    gap: 9px;
+  }
+}
+
+.title {
+  display: none;
+  margin-bottom: 12px;
+
+  @include walletFullScreenBreakpoint {
+    display: block;
+    padding-left: 60px;
+  }
+
+  @include sm {
+    padding-left: 45px;
+  }
+}
+
+.headerLeft {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  @container (max-width: 576px) {
+    flex-direction: column;
+    gap: 9px;
+    align-items: flex-start;
+  }
+
+  @container (max-width: 476px) {
+    width: 100%;
+
+    button {
+      display: none;
+    }
+
+    .searchField {
+      width: 100%;
+    }
+  }
+}

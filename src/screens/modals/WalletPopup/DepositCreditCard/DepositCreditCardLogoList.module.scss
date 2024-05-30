@@ -1,0 +1,17 @@
+.grid {
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.logo {
+  border-radius: var(--border-radius-small);
+  background: rgba(25, 36, 50, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1.84615385;
+}

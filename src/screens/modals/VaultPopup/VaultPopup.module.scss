@@ -1,0 +1,43 @@
+@import "@styles/mixins";
+
+.modal {
+  --modal-content-padding-bottom: 60px;
+
+  padding-top: 60px;
+  width: 531px;
+  min-height: 622px;
+  overflow: hidden;
+
+  @include sm {
+    min-height: unset;
+    height: 100%;
+    max-width: unset !important;
+    width: 100% !important;
+  }
+}
+
+.modalContent {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // gap: 28px;
+
+  // @include sm {
+  //   height: 100%;
+  //   justify-content: center;
+  // }
+}
+
+.stars,
+.bgImage {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1px;
+  z-index: -1;
+}
+
+.stars {
+  mix-blend-mode: color-dodge;
+}

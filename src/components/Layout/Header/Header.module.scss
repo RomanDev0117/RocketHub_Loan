@@ -1,0 +1,200 @@
+@import "@styles/mixins";
+
+.header {
+  // border-bottom: 1px solid var(--grey-950);
+  background: var(--grey-900);
+  height: 80px;
+  padding: 10px 30px;
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: var(--zIndex-header);
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: $mobileHeader) {
+    padding: 10px;
+    height: 70px;
+  }
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 186px;
+
+  @include mobileHeaderBreakpoint {
+    gap: 0px;
+  }
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  @media (max-width: 1000px){
+    display: none;
+  }
+}
+
+.tab {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tabLoan {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+}
+
+.tabText {
+  font-family: var(--font-poppins);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+}
+
+.signButton {
+  height: 54px;
+  padding: 16px 36px 16px 36px;
+  border-radius: 8px;
+  background-color: #FFE24B;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 660px){
+    padding: 16px
+  }
+}
+
+.flag {
+  @media (max-width: 660px){
+    display: none;
+  }
+}
+
+.buttonText {
+  font-family: var(--font-poppins);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  line-height: 16px;
+  color: #030814;
+  @media (max-width: 660px){
+    display: none;
+  }
+}
+
+.currencyBox {
+  height: 54px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #1E1F27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @media (max-width: 660px){
+    display: none;
+  }
+}
+
+.currencyText {
+  font-family: var(--font-poppins);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  line-height: 16px;
+  color: #fff;
+}
+
+.currencyDivider {
+  width: 1px;
+  height: 34px;
+  background-color:#1B243A ;
+  @media (max-width: 660px){
+    display: none;
+  }
+}
+
+.divider {
+  margin: -12px 20px;
+  width: 2px;
+  background-color: var(--grey-850);
+  height: var(--header-size);
+  @media (max-width: 660px){
+    display: none;
+  }
+}
+
+.tickets {
+  margin-right: 12px;
+}
+
+.desktopLogo {
+  display: initial;
+}
+
+.mobileLogo {
+  display: none;
+  width: 25px;
+  height: auto;
+
+  @media screen and (max-width: 1023px) {
+    display: initial;
+  }
+}
+
+.iconButtons {
+  display: flex;
+  gap: 8px;
+  margin-left: 30px;
+
+  @include sm {
+    margin-left: 0;
+    gap: 0;
+  }
+}
+
+.iconButton {
+  @include button-reset;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-400);
+
+  &:hover {
+    background-color: var(--grey-900);
+    border-radius: var(--border-radius);
+  }
+}
+
+.loginButton {
+  min-width: 120px;
+
+  &.loginCenter {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.desktopNotificationBell {
+  @media sm {
+    display: none;
+  }
+}

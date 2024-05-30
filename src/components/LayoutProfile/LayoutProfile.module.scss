@@ -1,0 +1,37 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media screen and (max-width: 840px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+}
+
+.sidebar {
+  flex: 0 0 235px;
+
+  @media screen and (max-width: 1200px) {
+    flex: 0 0 200px;
+  }
+
+  @media screen and (max-width: 840px) {
+    flex: auto;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  display: none;
+
+  @media screen and (max-width: 840px) {
+    display: flex;
+  }
+}

@@ -1,0 +1,140 @@
+@import "@styles/mixins";
+
+.slider {
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.slideItem {
+  height: 264px;
+  width: 100%;
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--grey-800);
+  // background: linear-gradient(22deg, #182134 0%, #111827 100%);
+  background-color: var(--grey-850);
+  position: relative;
+  overflow: hidden;
+
+  &.withContent::before {
+    content: "";
+    // background: radial-gradient(126.73% 71.81% at 16.86% 42.17%, #1E2937 20.89%, rgba(30, 41, 55, 0.00) 55.76%, rgba(30, 41, 55, 0.00) 80.41%);
+    background: radial-gradient(
+      138.73% 170.81% at 14.86% 52.17%,
+      var(--grey-850) 20.89%,
+      rgba(30, 41, 55, 0) 55.76%,
+      rgba(30, 41, 55, 0) 80.41%
+    );
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 5;
+  }
+
+  @media screen and (max-width: 1480px) {
+    height: 200px;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 110px;
+  }
+}
+
+.slideBg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+      background-position: center;
+  }
+}
+
+.pagination {
+  @include flexCenter;
+  border-radius: var(--border-radius-large);
+  background: rgba(255, 255, 255, 0.1);
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 4px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: #fff;
+  opacity: 0.15;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 24px;
+  height: 24px;
+  @include flexCenter;
+  color: #f1f5f9;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.prev {
+  left: 18px;
+}
+
+.next {
+  right: 18px;
+}
+
+.slideContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  padding-left: 64px;
+  padding-right: 64px;
+
+  @media screen and (max-width: 1480px) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include sm {
+    max-width: 100%;
+  }
+}
+
+.slideInnerContent {
+  width: 330px;
+  padding-left: 30px;
+}

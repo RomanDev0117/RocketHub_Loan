@@ -1,0 +1,132 @@
+@import "@styles/mixins";
+
+.container {
+  position: relative;
+  max-height: 367px;
+  padding: 24px 0px 39px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  background-color: #1E1F27;
+  overflow: hidden;
+  &.notOffered {
+    height: 340px;
+  }
+  &.selected {
+    padding: 24px 0px 23px 0px;
+  }
+}
+
+.itemSellBox{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8.8px
+}
+.itemText{
+  font-family: var(--font-poppins);
+  font-size: 14.7px;
+  font-weight: 500;
+  color: #646A77 ;
+}
+.priceText{
+  margin-top: 13px;
+  font-family: var(--font-poppins);
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff ;
+}
+.imgBox {
+  width: 202px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.countBox {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  &.isOffered{
+    padding: 0px 24px 0px 24px;
+  }
+}
+
+.image {
+  height: 150px;
+  width: 100%;
+  max-width: 202px;
+  object-fit: contain;
+  display: block;
+}
+
+.recBox {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4.4px;
+  background-color: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.isOffered {
+    width: 35px;
+    height: 35px;
+    border-radius: 4.4px;
+    font-size: 11.747px;
+  }
+}
+
+.countText {
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff ;
+  &.isOffered {
+    font-size: 11.747px;
+  }
+}
+
+.elipseContainer {
+  width: 150px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(-50%);
+  // overflow: hidden;
+  z-index: 2;
+  border-radius: var(--border-radius-large);
+  &.selected {
+    background: linear-gradient(270deg, rgba(255, 226, 75, 0.00) 0%, #FFE24B 48.96%, rgba(255, 226, 75, 0.00) 100%);
+    filter: blur(1.0965968370437622px);
+    height: 2px;
+  }
+  &.isOffered {
+    background: linear-gradient(270deg, rgba(51, 45, 15, 0.00) 0%, #FFE24B 48.96%, rgba(255, 226, 75, 0.00) 100%);
+    filter: blur(3.0965968370437622px);
+    height: 1px;
+  }
+}
+
+.glow {
+  color: rgb(221, 221, 221);
+  // width: calc(149px * 1.5);
+  // height: calc(54px * 1.5);
+  width: 180px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.25s var(--easing);
+}

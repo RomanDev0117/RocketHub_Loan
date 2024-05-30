@@ -1,0 +1,55 @@
+.modal {
+  z-index: calc(var(--zIndex-modal) + 1);
+  width: 691px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-top: -8px;
+  font-weight: 900;
+  line-height: 36px;
+  letter-spacing: normal;
+}
+
+.description {
+  max-width: 507px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.button {
+  font-size: 18px;
+  font-weight: 900px;
+  line-height: 18px;
+  padding: 18px;
+  width: 292px;
+  height: 66px;
+  color: #052B02;
+}
+
+.bomb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 300px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: -1;
+}

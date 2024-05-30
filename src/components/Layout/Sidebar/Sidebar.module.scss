@@ -1,0 +1,163 @@
+@import "@styles/mixins";
+
+.sidebar {
+  position: fixed;
+  width: var(--sidebar-expanded-width);
+  left: 0;
+  top: calc(var(--header-size) - 1px);
+  bottom: 0;
+  background-color: var(--grey-850);
+  padding: 10px;
+  z-index: var(--zIndex-sidebar);
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  transition: all 0.1s ease-out;
+  overflow-x: hidden;
+  transform: translate3d(0, 0, 0);
+  box-shadow: 8px 0px 18px 0px rgba(0, 0, 0, 0.1),
+    32px 0px 32px 0px rgba(0, 0, 0, 0.09), 72px 0px 43px 0px rgba(0, 0, 0, 0.05),
+    128px 0px 51px 0px rgba(0, 0, 0, 0.01), 200px 0px 56px 0px rgba(0, 0, 0, 0);
+
+  padding-top: 18px;
+
+  @include mobileHeaderBreakpointUp {
+    &.collapsed {
+      width: var(--sidebar-collapsed-width);
+      padding-top: 40px;
+      padding-left: 0;
+      padding-right: 0;
+      gap: 0;
+    }
+  }
+
+  @include mobileHeaderBreakpoint {
+    width: 100%;
+    height: calc(100vh - var(--header-size));
+    transition: var(--transition);
+    padding: 12px;
+    gap: 20px;
+
+    &.collapsed {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}
+
+.list {
+  gap: 2px;
+  @include mobileHeaderBreakpoint {
+    gap: 2px;
+  }
+}
+
+.listItem {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: -0.15px;
+
+  gap: 8px;
+  padding: 11px;
+  min-height: 42px;
+  white-space: nowrap;
+  position: relative;
+
+  &:hover {
+    // color: #eee9ba;
+    text-shadow: 0px 0px 18px 0px rgba(90, 215, 148, 0.3);
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  @include mobileHeaderBreakpointUp {
+    .collapsed & {
+      justify-content: center;
+
+      &:hover {
+        background-color: var(--grey-900);
+        color: var(--white);
+      }
+
+      &:before {
+        border-radius: 0;
+      }
+    }
+  }
+
+  &:global(.active)::before {
+    transform: scale(1);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.1s ease-out;
+    border-radius: var(--border-radius);
+    background: var(--grey-900);
+    transform: scale(0);
+    z-index: -1;
+  }
+}
+
+.toggleSidebarButton {
+  @include flexCenter;
+  @include button-reset;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 5px;
+  right: 8px;
+  border-radius: 4px;
+
+  .arrow {
+    transition: all 0.1s ease-out;
+  }
+
+  @include mobileHeaderBreakpointUp {
+    .collapsed & {
+      width: var(--sidebar-collapsed-width);
+      border-radius: 0;
+      right: 0;
+      top: 0;
+      height: 36px;
+
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--grey-900);
+  }
+
+  @include mobileHeaderBreakpoint {
+    display: none;
+  }
+}
+
+.collapsedSeparator {
+  border-bottom: 1px solid var(--grey-750);
+}
+
+.gamesMobileList {
+  display: none;
+
+  @include mobileHeaderBreakpoint {
+    display: flex;
+  }
+}
+
+.upgraderIcon {
+  display: flex;
+  justify-content: center;
+  width: 24px;
+}

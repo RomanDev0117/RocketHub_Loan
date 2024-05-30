@@ -1,0 +1,81 @@
+@import "@styles/mixins";
+
+.modal {
+  max-width: 480px;
+  width: 100%;
+
+  --modal-padding-x: 0;
+  --modal-padding-top: 50px;
+  --modal-content-padding-x: 40px;
+  --modal-content-padding-bottom: 30px;
+
+  @include xs {
+    --modal-content-padding-x: 1rem;
+    --modal-content-padding-bottom: 1.5rem;
+  }
+}
+
+.buttonCoin {
+  width: 21px;
+  height: 21px;
+}
+
+.header {
+  margin-left: calc(-1 * var(--modal-content-padding-x));
+  margin-right: calc(-1 * var(--modal-content-padding-x));
+  padding: 0 var(--modal-content-padding-x) 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 26px;
+  padding-top: 4px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-bottom: 11px;
+  white-space: nowrap;
+}
+
+.box {
+  padding: 13px 19px 13px 17px;
+  min-height: 0 !important;
+
+  .title {
+    margin-bottom: 0;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  flex: 0 0 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rewardsStatsContainer {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.rewardsBox {
+  padding: 17px 17px 17px 14px;
+  min-height: 0 !important;
+  justify-content: flex-start !important;
+}
+
+.rewardIconContainer {
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+
+.rewardsTitle {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 16px;
+  white-space: nowrap;
+}

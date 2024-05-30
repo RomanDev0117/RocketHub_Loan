@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: auto;
+
+  @container (max-width: 480px) {
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 20px;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.39px;
+}
+
+.title {
+  color: var(--grey-300);
+  margin-bottom: 2px;
+}
+
+.description {
+  color: var(--grey-500);
+}
+
+.ageRestriction {
+  display: none;
+
+  @container (max-width: 1088px) {
+    display: flex;
+  }
+}

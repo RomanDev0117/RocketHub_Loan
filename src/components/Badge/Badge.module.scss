@@ -1,0 +1,30 @@
+.container {
+  background-color: var(--grey-750);
+  padding: 0 8px;
+  height: 17px;
+
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: -0.25px;
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dangerColor {
+  background-color: #f00;
+  color: var(--white);
+}
+
+.successColor {
+  background: radial-gradient(
+    92.19% 120% at 50% 50%,
+    rgba(74, 221, 1, 0.4) 0%,
+    rgba(42, 118, 6, 0.4) 63.22%
+  );
+  color: var(--crazy-green);
+  font-weight: 600;
+  letter-spacing: -0.195px;
+}

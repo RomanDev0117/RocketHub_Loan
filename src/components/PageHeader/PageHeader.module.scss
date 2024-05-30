@@ -1,0 +1,61 @@
+@import "@styles/mixins";
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.root {
+  @include flexCenterBetween;
+  gap: 16px;
+  margin-bottom: 40px;
+
+  @include sm {
+    margin-bottom: 24px;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &.mobileRow {
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 40px;
+  // letter-spacing: -0.26px;
+  letter-spacing: normal;
+
+  @include sm {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+.iconContainer {
+  @include flexCenter;
+}
+
+.childrenContainer {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  @include sm {
+    width: 100%;
+  }
+
+  .mobileRow & {
+    @include sm {
+      width: auto;
+    }
+  }
+}

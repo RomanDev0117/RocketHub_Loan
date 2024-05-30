@@ -1,0 +1,83 @@
+@import "@styles/mixins";
+
+.container {
+  // --dropdown-list-bg: var(--grey-850);
+  --input-border-radius: var(--wallet-modal-input-radius);
+
+  // --input-bg: #090c14;
+  // --dropdown-bg: #090c14;
+  // --dropdown-list-bg: #090c14;
+  --input-border: none;
+  container-type: inline-size;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.searchField {
+  min-width: 174px;
+  flex: 1;
+  order: 5;
+
+  @include sm {
+    min-width: 150px;
+  }
+}
+
+.gameTypeDropdown {
+  max-width: 150px;
+  flex: 1;
+  order: 1;
+
+  @container (max-width: 520px) {
+    max-width: none;
+  }
+}
+
+.orderByDropdown {
+  max-width: 180px;
+  flex: 1;
+  order: 3;
+
+  @container (max-width: 520px) {
+    max-width: none;
+  }
+}
+
+.priceDropdown {
+  max-width: 270px;
+  flex: 1;
+  order: 3;
+
+  @container (max-width: 620px) {
+    max-width: none;
+  }
+}
+
+.priceFields {
+  min-width: 225px;
+  max-width: 225px;
+  flex: 1;
+  order: 2;
+
+  @container (max-width: 520px) {
+    display: none !important;
+  }
+}
+
+.pricesContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  order: 2;
+
+  @container (max-width: 620px) {
+    order: 4;
+    width: 100%;
+  }
+}

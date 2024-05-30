@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  gap: 12px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  :global(.react-switch-bg) {
+    background: linear-gradient(180deg, #475569 0%, #334155 100%) !important;
+  }
+
+  &.active {
+    :global(.react-switch-bg) {
+      background: linear-gradient(
+        180deg,
+        var(--primary-color) 0%,
+        #4fbb57 100%
+      ) !important;
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+.switchContainer {
+  position: relative;
+  display: flex;
+  transition: var(--transition);
+
+  &.loading {
+    .switch {
+      opacity: 0 !important;
+    }
+  }
+}

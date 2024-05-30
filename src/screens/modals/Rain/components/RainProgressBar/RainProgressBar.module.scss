@@ -1,0 +1,26 @@
+.progressBar {
+  height: 4.5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - 10px);
+  left: 5px;
+
+  border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+  background: #8d4637;
+  box-shadow: 0px -4px 12px 0px rgba(0, 0, 0, 0.25),
+    0px -1px 2px 0px rgba(81, 127, 189, 0.42),
+    0px 1px 2px 0px rgba(255, 255, 255, 0.25) inset,
+    0px -1px 2px 0px rgba(0, 9, 19, 0.48) inset;
+
+  animation: progress var(--progressDuration, 7000ms) linear 0s forwards;
+}
+
+@keyframes progress {
+  0% {
+    width: var(--startFrom, 100%);
+  }
+  100% {
+    width: 0%;
+  }
+}

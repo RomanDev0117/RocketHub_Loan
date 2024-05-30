@@ -1,0 +1,183 @@
+$mobileHeader: 680px;
+$noChat: 1500px;
+$noSidebar: 1400px;
+$vWheel: 670px;
+$addCaseFullScreen: 830px;
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexCenterBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexStartBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin xs {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin xlg {
+  @media (max-width: 1500px) {
+    @content;
+  }
+}
+
+@mixin xxlg {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin responsive($maxWidth) {
+  @media (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin mdUp {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin smUp {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+@mixin mobileHeaderBreakpoint {
+  @media screen and (max-width: $mobileHeader) {
+    @content;
+  }
+}
+
+@mixin mobileHeaderBreakpointUp {
+  @media screen and (min-width: ($mobileHeader + 1px)) {
+    @content;
+  }
+}
+
+@mixin addCaseFullScreenBreakpoint {
+  @media screen and (max-width: ($addCaseFullScreen)) {
+    @content;
+  }
+}
+
+@mixin walletFullScreenBreakpoint {
+  @media screen and (max-width: 830px) {
+    @content;
+  }
+}
+
+@mixin caseBattleHorizontalBreakpoint {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin rewardsMobileBreakpoint {
+  @media screen and (max-width: 660px) {
+    @content;
+  }
+}
+
+@mixin buttonHover(
+  $bg: var(--grey-700),
+  $scale: 1,
+  $transition: var(--transition)
+) {
+  &:hover {
+    &::before {
+      transform: scale($scale);
+    }
+  }
+
+  &:active {
+    &::before {
+      transform: scale(calc($scale + 0.05));
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: $transition;
+    border-radius: 10px;
+    background: $bg;
+    transform: scale(0);
+    z-index: -1;
+  }
+}
+
+@mixin grid($initialColumns, $gap, $maxWidths) {
+  display: grid;
+  grid-column-gap: $gap;
+  grid-row-gap: $gap;
+  grid-template-columns: repeat($initialColumns, minmax(0, 1fr));
+
+  @for $i from 1 through length($maxWidths) {
+    $maxWidth: nth($maxWidths, $i);
+    @container (max-width: #{$maxWidth}px) {
+      grid-template-columns: repeat($initialColumns - $i, minmax(0, 1fr));
+    }
+  }
+}

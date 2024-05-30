@@ -1,0 +1,40 @@
+@import "@styles/mixins";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include sm {
+    flex-wrap: wrap;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.itemTitle {
+  color: var(--grey-300);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.45px;
+}
+
+.itemPrice {
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.39px;
+}
+
+.button {
+  @include sm {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

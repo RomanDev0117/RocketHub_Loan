@@ -1,0 +1,105 @@
+.container {
+  --p: 8px 16px 8px 12px;
+  --r: 8px;
+
+  border-radius: var(--r);
+  background: var(--grey-800);
+}
+
+.header {
+  padding: var(--p);
+  border-radius: var(--r);
+  background: var(--grey-750);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+
+  .levelIcon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  .playerName {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.45px;
+  }
+}
+
+.wonAmount {
+  letter-spacing: 0.39px;
+}
+
+.item {
+  padding: var(--p);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-750);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    object-fit: contain;
+  }
+
+  .itemLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .round {
+    color: var(--grey-500);
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0.39px;
+  }
+
+  .itemPrice {
+    font-size: 11px;
+  }
+
+  .itemDescription {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .itemName {
+    color: var(--grey-300);
+    font-weight: 600;
+    line-height: 14px;
+    letter-spacing: 0.39px;
+  }
+
+  .itemChance {
+    color: var(--grey-400);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.33px;
+
+    span {
+      color: var(--grey-500);
+    }
+  }
+}

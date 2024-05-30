@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  justify-self: flex-end;
+  flex: 0 0 300px;
+}
+
+.divider {
+  height: 1px;
+  min-height: 1px;
+  background-color: var(--grey-800);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}

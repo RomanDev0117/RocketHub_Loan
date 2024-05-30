@@ -1,0 +1,69 @@
+.container {
+  --bg: var(--grey-900);
+
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
+  background-color: var(--bg);
+  padding: 18px 12px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  gap: 18px;
+
+  box-shadow: 0px 8px 17px 0px rgba(17, 24, 39, 0.18),
+    0px 32px 32px 0px rgba(17, 24, 39, 0.16),
+    0px 71px 43px 0px rgba(17, 24, 39, 0.09),
+    0px 126px 51px 0px rgba(17, 24, 39, 0.03),
+    0px 197px 55px 0px rgba(17, 24, 39, 0);
+
+  &.hidden {
+    pointer-events: none;
+  }
+
+  &.loading {
+    .price {
+      visibility: hidden;
+    }
+  }
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -16px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   border: 9px solid transparent;
+  //   border-bottom-color: var(--bg);
+  // }
+
+  &::after {
+    // element which is between wallet and the dropdown so when user hovers and moves cursor vault is not disapearing
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: transparent;
+    height: 8px;
+    top: -8px;
+  }
+}
+
+.title {
+  text-align: center;
+  align-items: center;
+  white-space: nowrap;
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 0.13px;
+}
+
+.priceContainer {
+  position: relative;
+}
